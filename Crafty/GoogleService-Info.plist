@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>807114613770-a30lsv5ash3bpo7c5bg257bcmhc4hm9q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.807114613770-a30lsv5ash3bpo7c5bg257bcmhc4hm9q</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDEDCUNU2jTLi6RfqSL6_VpeyHP5taEync</string>
+	<key>GCM_SENDER_ID</key>
+	<string>807114613770</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>jimmy.crafty</string>
+	<key>PROJECT_ID</key>
+	<string>craty-e784e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>craty-e784e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:807114613770:ios:dc37d48dd1eeaed3</string>
+	<key>DATABASE_URL</key>
+	<string>https://craty-e784e.firebaseio.com</string>
+</dict>
+</plist>
