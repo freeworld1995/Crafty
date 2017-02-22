@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhS-1M-znd">
-                                <rect key="frame" x="8" y="15.5" width="40" height="20"/>
+                                <rect key="frame" x="18" y="15.5" width="40" height="20"/>
                                 <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="17"/>
                                 <color key="textColor" red="0.36078431372549019" green="0.29411764705882354" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                             <constraint firstAttribute="trailing" secondItem="xEs-rP-FkO" secondAttribute="trailing" id="6Py-eR-eWl"/>
                             <constraint firstItem="xEs-rP-FkO" firstAttribute="width" secondItem="lPz-eN-qss" secondAttribute="width" id="74V-Ln-HqA"/>
                             <constraint firstAttribute="height" constant="50" id="cJZ-Fk-Dkm"/>
-                            <constraint firstItem="IhS-1M-znd" firstAttribute="leading" secondItem="lPz-eN-qss" secondAttribute="leading" constant="8" id="ciP-YI-kFT"/>
+                            <constraint firstItem="IhS-1M-znd" firstAttribute="leading" secondItem="lPz-eN-qss" secondAttribute="leading" constant="18" id="ciP-YI-kFT"/>
                             <constraint firstAttribute="bottom" secondItem="xEs-rP-FkO" secondAttribute="bottom" id="fpu-ba-dLT"/>
                             <constraint firstItem="IhS-1M-znd" firstAttribute="centerY" secondItem="lPz-eN-qss" secondAttribute="centerY" id="lgu-X3-ImG"/>
                             <constraint firstItem="xEs-rP-FkO" firstAttribute="leading" secondItem="lPz-eN-qss" secondAttribute="leading" id="wzW-X6-Ddh"/>

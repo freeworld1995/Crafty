@@ -12,4 +12,7 @@ target 'Crafty' do
   pod 'ImagePicker'
   pod 'KMPlaceholderTextView', '~> 1.3.0'
   pod 'RAMAnimatedTabBarController', "~> 2.0.13"
+  pod 'SDWebImage', '~>3.8'
+  pod 'RxSwift',    '~> 3.0'
+  pod 'RxCocoa',    '~> 3.0'
 end

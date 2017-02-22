@@ -9,9 +9,21 @@
 import Foundation
 
 class Product: NSObject {
-    var name: String?
+    var category: String?
+    var title: String?
     var detail: String?
     var price: Double?
-    var selfCollect: Bool?
-    var category: String?
+    var meetupLocation: String?
+    
+    override init() {
+        category = nil
+        title = nil
+        detail = nil
+        price = nil
+        meetupLocation = nil
+    }
+    
+    func toString() {
+        print("\(category) - \(title) - \(detail) - \(price) - \(meetupLocation)")
+    }
 }

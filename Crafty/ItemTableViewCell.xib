@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Medium.ttf">
+            <string>Lato-Medium</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ItemTableViewCell" id="KGk-i7-Jjw" customClass="ItemTableViewCell" customModule="Crafty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="52"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="package" translatesAutoresizingMaskIntoConstraints="NO" id="Oth-me-RFf">
+                        <rect key="frame" x="16" y="13" width="27" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="JdH-MF-ied"/>
+                            <constraint firstAttribute="width" secondItem="Oth-me-RFf" secondAttribute="height" multiplier="1:1" id="vRr-ec-6OO"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzG-Cm-XDd">
+                        <rect key="frame" x="55" y="18" width="28" height="17"/>
+                        <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="14"/>
+                        <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Describe your item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGy-aX-9Vn">
+                        <rect key="frame" x="179.5" y="18.5" width="99.5" height="14"/>
+                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                        <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="0.4923812072" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="JGy-aX-9Vn" secondAttribute="trailing" id="CRo-Yj-25W"/>
+                    <constraint firstItem="gzG-Cm-XDd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OTG-ec-wF1"/>
+                    <constraint firstItem="gzG-Cm-XDd" firstAttribute="leading" secondItem="Oth-me-RFf" secondAttribute="trailing" constant="12" id="Zbn-cf-iDA"/>
+                    <constraint firstItem="Oth-me-RFf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aLr-1P-s15"/>
+                    <constraint firstItem="Oth-me-RFf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="ajW-Qb-6DW"/>
+                    <constraint firstItem="JGy-aX-9Vn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="u0P-Sb-NJM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="itemDetail" destination="JGy-aX-9Vn" id="s8t-zX-59V"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="103.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="package" width="27" height="30"/>
+    </resources>
+</document>

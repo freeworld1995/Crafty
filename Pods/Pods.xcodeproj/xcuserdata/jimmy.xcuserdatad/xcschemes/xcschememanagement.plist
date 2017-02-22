@@ -39,6 +39,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RxCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RxSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>lottie-ios.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -46,47 +61,6 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>09A62655F66AE53A474D64E42E6E9DF9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>325A8060E7104A9154587DAF3D51FF9A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3BFF9F651824EF6D7159B996DAA71D25</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4B2A718D3497AB728883A57D84EA571A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CC2117D35E77ED7774ABE03E21F194B8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D53804E34279A83A61915C6ACA3C0D06</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

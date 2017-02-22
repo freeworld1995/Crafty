@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DeliveryTableViewCell" id="KGk-i7-Jjw" customClass="DeliveryTableViewCell" customModule="Crafty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="truck" translatesAutoresizingMaskIntoConstraints="NO" id="JJK-Fd-sEl">
+                        <rect key="frame" x="15" y="7" width="29" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="5ET-Rq-F6g"/>
+                            <constraint firstAttribute="width" secondItem="JJK-Fd-sEl" secondAttribute="height" multiplier="1:1" id="bCd-Iy-lVK"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet-up or Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvT-1E-9ps">
+                        <rect key="frame" x="56" y="11" width="152" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="0.48999999999999999" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JJK-Fd-sEl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1lC-1o-hZg"/>
+                    <constraint firstItem="EvT-1E-9ps" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2ef-NM-2xX"/>
+                    <constraint firstItem="JJK-Fd-sEl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="5jw-hj-Kzc"/>
+                    <constraint firstItem="EvT-1E-9ps" firstAttribute="leading" secondItem="JJK-Fd-sEl" secondAttribute="trailing" constant="12" id="fDG-nK-M4M"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="deliveryDetail" destination="EvT-1E-9ps" id="keF-Pe-xHb"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="truck" width="38" height="22"/>
+    </resources>
+</document>

@@ -22,8 +22,6 @@ class CategoryCell: UICollectionViewCell {
         self.contentView.autoresizingMask = [.flexibleHeight]
         self.autoresizingMask = .flexibleHeight
         
-        print(self.labelContainer.frame.height / 2)
-        
         animationView = LOTAnimationView.animationNamed("data10")
         animationView.frame = CGRect(x: self.labelContainer.frame.width * 0.8, y: 10, width: 30, height: 30)
         animationView.contentMode = .scaleAspectFit

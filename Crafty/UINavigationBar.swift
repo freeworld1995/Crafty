@@ -13,19 +13,27 @@ extension UINavigationController {
 }
 
 extension UINavigationItem {
-    func changeTitleView() {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 73, height: 28))
-        imageView.image = UIImage(named: "Title")
-        titleView = imageView
+    
+    /**
+     Add image to NavigationBar Title
+     - Parameter width: NavigationBar width
+     - Parameter height: NavigationBar height
+     */
+    func changeTitleView(width: CGFloat, height: CGFloat) {
+        let image = UIImage(named: "Title")
+        let imageView = UIImageView(frame: CGRect(x: (width - image!.size.width) / 2, y: (height - image!.size.height) / 2, width: image!.size.width, height: image!.size.height))
+        
+        imageView.image = image
+        self.titleView = imageView
     }
 }
 
 extension UINavigationBar {
+    /**
+     Setup text style for NavigationBar Title
+     */
     func setup() {
         titleTextAttributes = [NSForegroundColorAttributeName : Color.strongYellow,
-                               NSFontAttributeName: UIFont(name: "Lato-Medium", size: 18)]
-        
-        backIndicatorImage = UIImage(named: "NavBarBack")
-        backIndicatorTransitionMaskImage = UIImage(named: "NavBarBack")
+                               NSFontAttributeName: UIFont(name: "Lato-Medium", size: 20)]
     }
 }

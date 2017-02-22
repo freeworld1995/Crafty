@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         UINavigationBar.appearance().tintColor = Color.darkPurple
-
         return true
     }
 

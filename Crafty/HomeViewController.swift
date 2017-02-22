@@ -19,9 +19,13 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+
+    }
+    
+    override func awakeFromNib() {
         self.navigationController?.navigationBar.setup()
-        self.navigationItem.changeTitleView()
+        self.navigationItem.changeTitleView(width: self.navigationController!.navigationBar.frame.size.width, height: self.navigationController!.navigationBar.frame.size.height)
     }
 
     func checkIfUserIsLoggedIn() {
@@ -33,7 +37,7 @@ class HomeViewController: UIViewController {
     func handleLogout() {
         
         do {
-            try! FIRAuth.auth()!.signOut()
+            try FIRAuth.auth()!.signOut()
         } catch let logoutError {
             print(logoutError)
         }
