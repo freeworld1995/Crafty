@@ -1,0 +1,27 @@
+//
+//  ListProductsViewController.swift
+//  Crafty
+//
+//  Created by Jimmy Hoang on 3/2/17.
+//  Copyright © 2017 Jimmy Hoang. All rights reserved.
+//
+
+import UIKit
+
+class ListProductsViewController: UIViewController {
+
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let datasource = ListProductsDataSource()
+    var category: String?
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = datasource
+        
+    }
+}
+
+extension ListProductsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+}

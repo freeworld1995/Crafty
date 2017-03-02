@@ -29,16 +29,16 @@ class SubmitProductDataSource: NSObject, UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
+            cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as CategoryTableViewCell
             break
         case 1:
-            cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
+            cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as ItemTableViewCell
             break
         case 2:
-            cell = tableView.dequeueReusableCell(withIdentifier: "PriceTableViewCell", for: indexPath) as! PriceTableViewCell
+            cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as PriceTableViewCell
             break
         case 3:
-            cell = tableView.dequeueReusableCell(withIdentifier: "DeliveryTableViewCell", for: indexPath) as! DeliveryTableViewCell
+            cell = tableView.dequeueReusableCell(forIndexPath: indexPath) as DeliveryTableViewCell
             break
         default:
             break

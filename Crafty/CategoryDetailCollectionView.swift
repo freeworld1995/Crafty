@@ -8,37 +8,33 @@
 
 import UIKit
 
-protocol ShareCategory: class {
-    func update(title: String?) -> Void
-}
 
 class CategoryDetailCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
-    
     var data = [String]()
     var previousClickedCell: CategoryDetailCell?
-    weak var titleDelegate: ShareCategory?
-    var selectedCategory: String?
+    var selectedCategoryDetail: String?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
         delegate = self
         dataSource = self
-        self.titleDelegate?.update(title: selectedCategory)
-        register(UINib(nibName: "CategoryDetailCell", bundle: nil), forCellWithReuseIdentifier: "categoryDetailCell")
+        register(CategoryDetailCell.self)
+        
         if let flowLayout = self.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
     }
     
     deinit {
-        if selectedCategory != nil {
-            NotificationCenter.default.post(name: Notification.Name(rawValue: "shareCategory"), object: nil, userInfo: ["title": selectedCategory!])
+        if selectedCategoryDetail != nil {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "shareCategoryDetail"), object: nil, userInfo: ["title": selectedCategoryDetail!])
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: "categoryDetailCell", for: indexPath) as! CategoryDetailCell
+        let cell = dequeueReusableCell(forIndexPath: indexPath) as CategoryDetailCell
         cell.title.text = data[indexPath.item]
         return cell
     }
@@ -48,8 +44,8 @@ class CategoryDetailCollectionView: UICollectionView, UICollectionViewDelegate, 
         let cell = collectionView.cellForItem(at: indexPath) as! CategoryDetailCell
         
         cell.backgroundColor = Color.red
-        selectedCategory = cell.title.text
-        previousClickedCell = collectionView.cellForItem(at: indexPath) as! CategoryDetailCell
+        selectedCategoryDetail = cell.title.text
+        previousClickedCell = collectionView.cellForItem(at: indexPath) as? CategoryDetailCell
         
     }
     

@@ -20,7 +20,7 @@ class CategoryDataSource: NSObject, UICollectionViewDataSource {
     var shoesDetails = ["Sandal", "Boot", "Sneaker", "Slip on", "High heel"]
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! CategoryCell
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as CategoryContainerCell
 
         cell.categoryLabel.text = category[indexPath.item]
         
@@ -47,7 +47,6 @@ class CategoryDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
 
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return category.count
     }

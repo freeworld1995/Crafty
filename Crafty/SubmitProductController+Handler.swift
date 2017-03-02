@@ -11,32 +11,48 @@ import ImagePicker
 
 extension SubmitProductViewController {
     
+    // MARK: Handle notification from all ViewController send back to SubmitProductViewController
+    
     /**
      Get notification from CategoryCell & update label "categoryDetail"
      */
     func handleUpdateCategoryDetail(notification: Notification) {
+        if let categoryDetail = notification.userInfo?["title"] as? String {
+            let indexPath = IndexPath(row: 0, section: 0)
+            let cell = tableView.cellForRow(at: indexPath) as! CategoryTableViewCell
+            cell.categoryDetail.text = categoryDetail
+            product.categoryDetail = categoryDetail
+        }
+    }
+    
+    func handleUpdateCategory(notification: Notification) {
         if let category = notification.userInfo?["title"] as? String {
             let indexPath = IndexPath(row: 0, section: 0)
             let cell = tableView.cellForRow(at: indexPath) as! CategoryTableViewCell
-            cell.categoryDetail.text = category
             product.category = category
+            cell.categoryDetail.text = category
         }
     }
     
     func handleUpdateItemDetail(notification: Notification) {
         if let title = notification.userInfo?["title"] as? String, let detail = notification.userInfo?["description"] as? String  {
+            product.title = title
+            product.detail = detail
+            
             let indexPath = IndexPath(row: 1, section: 0)
             let cell = tableView.cellForRow(at: indexPath) as! ItemTableViewCell
             cell.itemDetail.text = title
-            product.title = title
-            product.detail = detail
-
         }
     }
     
     func handleUpdateDelivery(notification: Notification) {
-        if let location = notification.userInfo?["location"] as? String {
-            product.meetupLocation = location
+        if let locationName = notification.userInfo?["locationName"] as? String, let locationAddress = notification.userInfo?["locationAddress"] as? String {
+            product.locationName = locationName
+            product.locationAddress = locationAddress
+            
+            let indexPath = IndexPath(row: 3, section: 0)
+            let cell = tableView.cellForRow(at: indexPath) as! DeliveryTableViewCell
+            cell.deliveryDetail.text = locationName
         }
     }
     
@@ -62,11 +78,30 @@ extension SubmitProductViewController {
         for i in 0...2 {
             imageCollection[i].image = images[i]
         }
-        imagePicker.dismiss(animated: true, completion: nil)
+        imagePicker.dismiss(animated: true) {
+            UIView.animate(withDuration: 0.9, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.4, options: .curveEaseOut, animations: {
+                self.rightImageContraint.constant = 16
+                self.leftImageContraint.constant = 16
+                self.imageCollection.forEach {
+                    self.setImageShadow(image: $0)
+                }
+
+                self.view.layoutIfNeeded()
+            }, completion: { (success) in
+            })
+
+        }
     }
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
+    func setImageShadow(image: UIImageView) {
+        image.layer.masksToBounds = false
+        image.layer.shadowOffset = CGSize.zero
+        image.layer.shadowColor = UIColor.black.cgColor
+        image.layer.shadowOpacity = 0.5
+        image.layer.shadowRadius = 2
+    }
 }

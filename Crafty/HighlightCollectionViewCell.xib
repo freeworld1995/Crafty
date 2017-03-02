@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HighlightCollectionViewCell" customModule="Crafty" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="402" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Cr1-r8-fhl" customClass="HighlightCollectionView" customModule="Crafty" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="200"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96470588239999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewLayout key="collectionViewLayout" id="a5l-UV-K9y" customClass="HighlightLayout" customModule="Crafty" customModuleProvider="target"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </collectionView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.96470588235294119" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Cr1-r8-fhl" secondAttribute="trailing" id="4eh-e1-2Pv"/>
+                <constraint firstAttribute="bottom" secondItem="Cr1-r8-fhl" secondAttribute="bottom" id="9gm-AU-zVx"/>
+                <constraint firstItem="Cr1-r8-fhl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="N8N-0H-eiG"/>
+                <constraint firstItem="Cr1-r8-fhl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dR3-nm-xG6"/>
+            </constraints>
+            <size key="customSize" width="513" height="229"/>
+            <connections>
+                <outlet property="collectionView" destination="Cr1-r8-fhl" id="JsY-TA-Uwy"/>
+            </connections>
+            <point key="canvasLocation" x="264" y="194"/>
+        </collectionViewCell>
+    </objects>
+</document>

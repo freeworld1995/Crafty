@@ -10,20 +10,24 @@ import Foundation
 
 class Product: NSObject {
     var category: String?
+    var categoryDetail: String?
     var title: String?
     var detail: String?
     var price: Double?
-    var meetupLocation: String?
+    var locationName: String?
+    var locationAddress: String?
     
     override init() {
         category = nil
+        categoryDetail = nil
         title = nil
         detail = nil
         price = nil
-        meetupLocation = nil
+        locationName = nil
+        locationAddress = nil
     }
     
-    func toString() {
-        print("\(category) - \(title) - \(detail) - \(price) - \(meetupLocation)")
+    func printAll() {
+        print("\(category) - \(categoryDetail) -  \(title) - \(detail) - \(price) - \(locationName) - \(locationAddress)")
     }
 }

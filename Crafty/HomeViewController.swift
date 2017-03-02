@@ -8,26 +8,31 @@
 
 import UIKit
 import Firebase
+import XLPagerTabStrip
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController, IndicatorInfoProvider {
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let datasource = HomeDataSource()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//try! FIRAuth.auth()?.signOut()
+        
+        collectionView.dataSource = datasource
+        collectionView.delegate = self
+        collectionView.register(HighlightCollectionViewCell.self)
+        collectionView.register(SectionLabelCell.self)
+        collectionView.register(HomeCategoryCell.self)
         checkIfUserIsLoggedIn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-
     }
     
     override func awakeFromNib() {
-        self.navigationController?.navigationBar.setup()
-        self.navigationItem.changeTitleView(width: self.navigationController!.navigationBar.frame.size.width, height: self.navigationController!.navigationBar.frame.size.height)
     }
-
+    
     func checkIfUserIsLoggedIn() {
         if FIRAuth.auth()?.currentUser?.uid == nil {
             performSelector(onMainThread: #selector(handleLogout), with: nil, waitUntilDone: false)
@@ -45,10 +50,11 @@ class HomeViewController: UIViewController {
         let vc = storyboard?.instantiateViewController(withIdentifier: "registervc") as! RegisterViewController
         present(vc, animated: true, completion: nil)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "Suggestion")
     }
     
 }
+
+

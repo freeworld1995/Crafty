@@ -14,12 +14,14 @@ class CategoryViewController: UIViewController {
     
     let dataSource = CategoryDataSource()
     
+    var selectedCategory: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar(title: "Category")
         collectionView.delegate = self
         collectionView.dataSource = dataSource
-        collectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: "categoryCell")
+        collectionView.register(CategoryContainerCell.self)
     }
     
     func setupNavigationBar(title: String) {
@@ -27,6 +29,12 @@ class CategoryViewController: UIViewController {
         self.navigationItem.title = title
     }
     
+    deinit {
+        print("CategoryVC deinit")
+        if selectedCategory != nil {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "shareCategory"), object: nil, userInfo: ["title": selectedCategory!])
+        }
+    }
 }
 
 extension CategoryViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
@@ -38,18 +46,12 @@ extension CategoryViewController: UICollectionViewDelegateFlowLayout, UICollecti
         default:
             return CGSize(width: self.view.frame.size.width, height: 50)
         }
-        //         cells[indexPath.row].
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! CategoryCell
+        let cell = collectionView.cellForItem(at: indexPath) as! CategoryContainerCell
         
-        //        collectionView.indexPathsForVisibleItems.forEach {
-        //            if $0 != indexPath {
-        //                let cell = collectionView.cellForItem(at: $0) as! CategoryCell
-        //                cell.collectionView.reloadData()
-        //            }
-        //        }
+        selectedCategory = cell.categoryLabel.text
         
         cell.setHeight()
         cell.play()

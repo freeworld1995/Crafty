@@ -27,12 +27,11 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
     }
     
     func handleRegister() {
-        guard let name = nameTxt.text, let email = emailTxt.text, let password = passwordTxt.text else { return }
+        guard let name = nameTxt.text, let email = emailTxt.text, let password = passwordTxt.text, let city = city else { return }
         
         // Tạo user - cần email, password
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
-                print(error!)
                 return
             }
             
@@ -55,7 +54,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
                     // Cho đc vào Storage rồi thì lấy url ảnh để cho tiếp vào Database
                     if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
                         // Info User kiểu Dictionary để cho vào Database
-                        let values = ["name": name, "email": email, "profileImageUrl": profileImageUrl]
+                        let values = ["name": name, "email": email, "city": city, "profileImageUrl": profileImageUrl]
                         
                         // Cho name + email + profileImageUrl vào Database
                         self.registerUserIntoDatabase(uid: userUId, values: values)
@@ -75,7 +74,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         // Insert đống dictionary (values) vào database
         userRef.updateChildValues(values) { (error, ref) in
             if error != nil {
-                print(error!)
+                print("error is : \(error!)")
                 return
             }
             

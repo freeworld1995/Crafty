@@ -19,14 +19,18 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
     @IBOutlet weak var productImage3: UIImageView!
     @IBOutlet var imageCollection: [UIImageView]!
     
+    @IBOutlet weak var leftImageContraint: NSLayoutConstraint!
+    @IBOutlet weak var rightImageContraint: NSLayoutConstraint!
+    
     var product: Product!
     
     let dataSource = SubmitProductDataSource()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         product = Product()
         
-        setupNavigationBar(title: "Your Product")
+        setupNavigationBar(title: "Sell")
         
         tableView.dataSource = dataSource
         tableView.delegate = self
@@ -34,12 +38,13 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
         productImage1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProductImages)))
         productImage1.isUserInteractionEnabled = true
         
-        tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
-        tableView.register(UINib(nibName: "ItemTableViewCell", bundle: nil), forCellReuseIdentifier: "ItemTableViewCell")
-        tableView.register(UINib(nibName: "PriceTableViewCell", bundle: nil), forCellReuseIdentifier: "PriceTableViewCell")
-        tableView.register(UINib(nibName: "DeliveryTableViewCell", bundle: nil), forCellReuseIdentifier: "DeliveryTableViewCell")
+        tableView.register(CategoryTableViewCell.self)
+        tableView.register(ItemTableViewCell.self)
+        tableView.register(PriceTableViewCell.self)
+        tableView.register(DeliveryTableViewCell.self)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateCategoryDetail), name: Notification.Name(rawValue: "shareCategory"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateCategoryDetail), name: Notification.Name(rawValue: "shareCategoryDetail"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateCategory), name: Notification.Name(rawValue: "shareCategory"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateItemDetail), name: Notification.Name(rawValue: "shareItem"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateDelivery), name: Notification.Name(rawValue: "shareDelivery"), object: nil)
     }
@@ -65,40 +70,18 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
         let cell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! PriceTableViewCell
         product.price = Double(cell.priceTextField.text!)
         
-        product.toString()
+        product.printAll()
+        
+        FirebaseManager.handleSubmitProduct(product: product, viewController: self)
     }
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "categorySegue" {
-    //            let vc = segue.destination as! CategoryViewController
-    //            vc.deleg
-    //        }
-    //    }
-    
-    //    func submitItemToDatabase() {
-    //        guard let name = nameTxt.text, let detail = detailTxt.text, let price = Double(priceTxt.text!), let category = categoryTxt.text, let selfCollect: Bool = selfCollectSwitch.isOn else { return }
-    //
-    //
-    //        let sellerId = FIRAuth.auth()?.currentUser?.uid
-    //        let ref = FIRDatabase.database().reference().child("products")
-    //        let timestamp = NSNumber(value: Int(Date().timeIntervalSince1970))
-    //        let values: [String: AnyObject] = ["name": name as AnyObject, "detail": detail as AnyObject, "price": price as AnyObject, "selfCollect": selfCollect as AnyObject, "category": category as AnyObject, "timestamp": timestamp, "sellerId": sellerId as AnyObject]
-    //
-    //        let childRef = ref.childByAutoId()
-    //
-    //        childRef.updateChildValues(values) { (error, ref) in
-    //            if error != nil {
-    //                print(error!)
-    //                return
-    //            }
-    //
-    //        }
-    //    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
 }
 
 extension SubmitProductViewController: UITableViewDelegate {
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 53
@@ -134,7 +117,7 @@ extension SubmitProductViewController: UITableViewDelegate {
                 navigationController?.pushViewController(vc, animated: true)
             }
         default:
-            print("Error pushing view controller")
+            print("not pushing to any VC")
         }
     }
     //

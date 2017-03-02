@@ -52,5 +52,11 @@
 Excerpt From: Paul Hudson. “Hacking with Swift.” iBooks. </string>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to import product images</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Used to find nearby places</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Used to find nearby places</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Used to find nearby places</string>
 </dict>
 </plist>

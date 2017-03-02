@@ -15,4 +15,9 @@ target 'Crafty' do
   pod 'SDWebImage', '~>3.8'
   pod 'RxSwift',    '~> 3.0'
   pod 'RxCocoa',    '~> 3.0'
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
+  pod "Hero"
+  pod 'XLPagerTabStrip', '~> 7.0'
 end

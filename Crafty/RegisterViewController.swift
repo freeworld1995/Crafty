@@ -27,6 +27,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTxt: CustomTextField!
     @IBOutlet weak var passwordTxt: CustomTextField!
     
+    var city: String?
+    
+    let locationMamager = LocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +42,12 @@ class RegisterViewController: UIViewController {
         nameTxt.delegate = self
         emailTxt.delegate = self
         passwordTxt.delegate = self
+        
+        locationMamager.getAdress { (result) in
+            if let city = result["City"] as? String {
+                self.city = city
+            }
+        }
         
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleSelectProfileImageView)))
         imageView.isUserInteractionEnabled = true
@@ -68,8 +78,6 @@ class RegisterViewController: UIViewController {
             }
         }
     }
-    
-
     
     @IBAction func registerPressed(_ sender: UIButton) {
         if segmentControl.selectedSegmentIndex == 0 {
