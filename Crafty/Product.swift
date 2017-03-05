@@ -16,6 +16,10 @@ class Product: NSObject {
     var price: Double?
     var locationName: String?
     var locationAddress: String?
+    var love: Int?
+    var timestamp: NSNumber?
+    var sellerID: String?
+    
     
     override init() {
         category = nil
@@ -25,6 +29,9 @@ class Product: NSObject {
         price = nil
         locationName = nil
         locationAddress = nil
+        love = nil
+        timestamp = nil
+        sellerID = nil
     }
     
     func printAll() {

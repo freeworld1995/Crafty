@@ -18,6 +18,8 @@ class ListProductsViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = datasource
+        datasource.getListProduct(category: category!, collectionView: collectionView, viewController: self)
+        collectionView.register(ProductCell.self)
         
     }
 }

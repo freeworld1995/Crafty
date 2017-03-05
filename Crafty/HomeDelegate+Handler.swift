@@ -35,7 +35,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         case 3:
             let vc = storyboard?.instantiateViewController(withIdentifier: "productVC")
         default:
-            <#code#>
+            let cell = collectionView.cellForItem(at: indexPath) as! HomeCategoryCell
+            goToListProductVC(category: cell.title.text!)
         }
     }
     
@@ -49,5 +50,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 12, left: 12, bottom: 0, right: 12)
+    }
+    
+    func goToListProductVC(category: String) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "productVC") as! ListProductsViewController
+        vc.category = category
+        self.navigationController?.present(vc, animated: true, completion: nil)
     }
 }

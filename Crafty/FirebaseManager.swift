@@ -41,4 +41,35 @@ class FirebaseManager: NSObject {
         }
 
     }
+    
+    static func observeProductByCategory(category: String, completion: @escaping (_ result: Bool) -> ()) -> [Product]? {
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return nil }
+        
+        var products = [Product]()
+        
+        let ref = FIRDatabase.database().reference().child("products").queryOrdered(byChild: "category").queryEqual(toValue: "\(category)")
+        
+        ref.observe(.value, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                let product = Product()
+                product.printAll()
+                product.setValuesForKeys(dictionary)
+                
+                if product.sellerID != uid {
+                    products.append(product)
+                }
+                
+                DispatchQueue.main.async {
+                    completion(true)
+                }
+            }
+        }) { (error) in
+            print("Error observing product by category: \(error)")
+            DispatchQueue.main.async {
+                completion(false)
+            }
+        }
+        
+        return products
+    }
 }
