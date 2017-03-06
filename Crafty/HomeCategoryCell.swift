@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeCategoryCell: UICollectionViewCell {
+class HomeCategoryCell: BaseCellWithShadow {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
 
@@ -17,12 +17,7 @@ class HomeCategoryCell: UICollectionViewCell {
         
         title.font = UIFont(name: "Lato-Semibold", size: 14)
         title.textColor = UIColor.white
-        self.layer.cornerRadius = 5.0
-        self.layer.masksToBounds = false
-        self.layer.shadowOffset = CGSize.zero
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowRadius = 2
+
     }
     
     func setupImage(name: String) {

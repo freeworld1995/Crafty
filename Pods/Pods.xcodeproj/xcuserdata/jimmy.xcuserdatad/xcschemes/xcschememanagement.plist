@@ -59,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>XLPagerTabStrip-XLPagerTabStrip.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,7 +82,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>084E718CC6BF5F9AF90B1EB15850A0E9</key>
+		<key>00F2E790288BE01BC542992AE5C11B1C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1514CF2E523453FABB68C2BD8FFA45F9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>208F606D87CF4261A6E0F71E2CBCB1F5</key>
+		<key>18257597D86A80BAB809E75DB2A996D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,7 +107,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>589BB9A1732FFC8331D6924145410117</key>
+		<key>481D80F1BBBCD59D8AD6F7295588D83D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4DDAFF06610C932DB872F1F46CDA84C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7396C88F6C586B0C2E708565612F3071</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>73A070117021588F8321340C443D1E98</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79AA4F9869A67F6DA7064E52908BBA78</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,12 +137,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9CFE4BAE58100CF887A46280806A9389</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B2135CCCFD4F6E04E8261773F013435C</key>
+		<key>9314DB30A3210AFFCC8A617DAE5CE257</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -138,11 +153,6 @@
 			<true/>
 		</dict>
 		<key>D53804E34279A83A61915C6ACA3C0D06</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EF4D0E647B20AFBF4F3F49C664406CA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

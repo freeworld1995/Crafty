@@ -9,21 +9,23 @@
 import UIKit
 
 class ListProductsViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     let datasource = ListProductsDataSource()
     var category: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.register(DemoCell.self)
+        collectionView.register(ProductCell.self)
         collectionView.delegate = self
         collectionView.dataSource = datasource
-        datasource.getListProduct(category: category!, collectionView: collectionView, viewController: self)
-        collectionView.register(ProductCell.self)
-        
+        datasource.getData(category: category!, collectionView: collectionView, viewController: self) {
+            self.collectionView.reloadData()
+        }
+
     }
 }
 
-extension ListProductsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-}
+

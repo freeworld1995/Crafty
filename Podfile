@@ -20,4 +20,5 @@ target 'Crafty' do
   pod 'GoogleMaps'
   pod "Hero"
   pod 'XLPagerTabStrip', '~> 7.0'
+  pod 'SwiftyJSON'
 end

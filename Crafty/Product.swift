@@ -6,19 +6,20 @@
 //  Copyright © 2017 Jimmy Hoang. All rights reserved.
 //
 
-import Foundation
+import Firebase
 
 class Product: NSObject {
     var category: String?
     var categoryDetail: String?
     var title: String?
     var detail: String?
-    var price: Double?
+    var price: NSNumber?
     var locationName: String?
     var locationAddress: String?
-    var love: Int?
+    var love: NSNumber?
     var timestamp: NSNumber?
     var sellerID: String?
+    var images: [String]
     
     
     override init() {
@@ -32,9 +33,10 @@ class Product: NSObject {
         love = nil
         timestamp = nil
         sellerID = nil
+        images = []
     }
     
     func printAll() {
-        print("\(category) - \(categoryDetail) -  \(title) - \(detail) - \(price) - \(locationName) - \(locationAddress)")
+        print("\(category) - \(categoryDetail) -  \(title) - \(detail) - \(price) - \(locationName) - \(locationAddress) - \(images.count)")
     }
 }

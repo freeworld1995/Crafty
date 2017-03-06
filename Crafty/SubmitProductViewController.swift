@@ -25,6 +25,7 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
     var product: Product!
     
     let dataSource = SubmitProductDataSource()
+    let nf = NumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,11 +69,9 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
     
     func handleSubmitProduct() {
         let cell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! PriceTableViewCell
-        product.price = Double(cell.priceTextField.text!)
+        product.price = Double(cell.priceTextField.text!) as NSNumber?
         
-        product.printAll()
-        
-        FirebaseManager.handleSubmitProduct(product: product, viewController: self)
+        FirebaseManager.handleSubmitProductInfo(product: product, images: imageCollection, viewController: self)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

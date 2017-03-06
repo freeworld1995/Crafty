@@ -52,7 +52,7 @@
 
 #pragma mark -- External Methods
 
-- (void)updateAnimationLayerClockTime:(CFTimeInterval)clockTime timeOffset:(CFTimeInterval)timeOffset {
+- (void)updateAnimationLayerWithTimeOffset:(CFTimeInterval)timeOffset {
   if (_needsAnimationUpdate) {
     return;
   }
@@ -92,14 +92,14 @@
 - (void)setAnimationDoesLoop:(BOOL)loopAnimation {
   _loopAnimation = loopAnimation;
   CFTimeInterval offset = [_layer convertTime:CACurrentMediaTime() fromLayer:nil];
-  CFTimeInterval clock = CACurrentMediaTime();
-  [self updateAnimationLayerClockTime:clock timeOffset:offset];
+  __unused CFTimeInterval clock = CACurrentMediaTime();
+  [self updateAnimationLayerWithTimeOffset:offset];
 }
 
 - (void)setAnimationIsPlaying:(BOOL)animationIsPlaying  {
   _animationIsPlaying = animationIsPlaying;
   CFTimeInterval offset = [_layer convertTime:CACurrentMediaTime() fromLayer:nil];
-  CFTimeInterval clock = CACurrentMediaTime();
+  __unused CFTimeInterval clock = CACurrentMediaTime();
 
   if (_animationIsPlaying) {
     if (_playFromBeginning) {
@@ -109,7 +109,7 @@
   } else {
     _animatedProgress =  offset / _animationDuration;
   }
-  [self updateAnimationLayerClockTime:clock timeOffset:offset];
+  [self updateAnimationLayerWithTimeOffset:offset];
 }
 
 - (void)setAnimatedProgress:(CGFloat)animatedProgress {
@@ -119,15 +119,15 @@
   _animatedProgress = animatedProgress > 1 ? fmod(animatedProgress, 1) : MAX(animatedProgress, 0);
   _animationIsPlaying = NO;
   CFTimeInterval offset = _animatedProgress == 1 ? _animationDuration - LOT_singleFrameTimeValue : _animatedProgress * _animationDuration;
-  CFTimeInterval clock = CACurrentMediaTime();
-  [self updateAnimationLayerClockTime:clock timeOffset:offset];
+  __unused CFTimeInterval clock = CACurrentMediaTime();
+  [self updateAnimationLayerWithTimeOffset:offset];
 }
 
 - (void)setAnimationSpeed:(CGFloat)speed {
   _animationSpeed = speed;
   CFTimeInterval offset = [_layer convertTime:CACurrentMediaTime() fromLayer:nil];
-  CFTimeInterval clock = CACurrentMediaTime();
-  [self updateAnimationLayerClockTime:clock timeOffset:offset];
+  __unused CFTimeInterval clock = CACurrentMediaTime();
+  [self updateAnimationLayerWithTimeOffset:offset];
 }
 
 #pragma mark -- Getters
@@ -180,6 +180,11 @@
 # pragma mark - Initializers
 
 + (instancetype)animationNamed:(NSString *)animationName {
+  return [self animationNamed:animationName inBundle:[NSBundle mainBundle]];
+}
+
+
++ (instancetype)animationNamed:(NSString *)animationName inBundle:(NSBundle *)bundle {
   NSArray *components = [animationName componentsSeparatedByString:@"."];
   animationName = components.firstObject;
   
@@ -189,7 +194,7 @@
   }
   
   NSError *error;
-  NSString *filePath = [[NSBundle mainBundle] pathForResource:animationName ofType:@"json"];
+  NSString *filePath = [bundle pathForResource:animationName ofType:@"json"];
   NSData *jsonData = [[NSData alloc] initWithContentsOfFile:filePath];
   NSDictionary  *JSONObject = jsonData ? [NSJSONSerialization JSONObjectWithData:jsonData
                                                                          options:0 error:&error] : nil;

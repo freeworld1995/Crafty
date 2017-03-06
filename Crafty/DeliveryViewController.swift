@@ -35,7 +35,7 @@ class DeliveryViewController: UIViewController {
     }
     
     func addTopAnimation() {
-        pinJumpView = LOTAnimationView.animationNamed("PinJump")
+        pinJumpView = LOTAnimationView(name: "PinJump")
         pinJumpView.frame = CGRect(x: pinJumpContainer.frame.width / 2 - 75, y: -pinJumpContainer.frame.height / 2 + 5, width: 150, height: 150)
         pinJumpView.contentMode = .scaleAspectFit
         pinJumpView.loopAnimation = true

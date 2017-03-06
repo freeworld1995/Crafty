@@ -23,6 +23,10 @@
 		BF304B3D1E575CD00069E36D /* PriceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF304B3B1E575CD00069E36D /* PriceTableViewCell.xib */; };
 		BF304B401E576F500069E36D /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF304B3E1E576F500069E36D /* DeliveryTableViewCell.swift */; };
 		BF304B411E576F500069E36D /* DeliveryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF304B3F1E576F500069E36D /* DeliveryTableViewCell.xib */; };
+		BF3938E61E6C17990075B2A5 /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3938E41E6C17990075B2A5 /* DemoCell.swift */; };
+		BF3938E71E6C17990075B2A5 /* DemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3938E51E6C17990075B2A5 /* DemoCell.xib */; };
+		BF3938E91E6D0FD60075B2A5 /* ListProductsDelegate+Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3938E81E6D0FD60075B2A5 /* ListProductsDelegate+Handler.swift */; };
+		BF3938EB1E6D14B50075B2A5 /* BaseCellWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3938EA1E6D14B50075B2A5 /* BaseCellWithShadow.swift */; };
 		BF776B0C1E654D9B005D64FE /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF776B0A1E654D9B005D64FE /* LocationTableViewCell.swift */; };
 		BF776B0D1E654D9B005D64FE /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF776B0B1E654D9B005D64FE /* LocationTableViewCell.xib */; };
 		BF776B191E65B3CF005D64FE /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF776B161E65B3CF005D64FE /* NibLoadableView.swift */; };
@@ -122,6 +126,10 @@
 		BF304B3B1E575CD00069E36D /* PriceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceTableViewCell.xib; sourceTree = "<group>"; };
 		BF304B3E1E576F500069E36D /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
 		BF304B3F1E576F500069E36D /* DeliveryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeliveryTableViewCell.xib; sourceTree = "<group>"; };
+		BF3938E41E6C17990075B2A5 /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
+		BF3938E51E6C17990075B2A5 /* DemoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCell.xib; sourceTree = "<group>"; };
+		BF3938E81E6D0FD60075B2A5 /* ListProductsDelegate+Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListProductsDelegate+Handler.swift"; sourceTree = "<group>"; };
+		BF3938EA1E6D14B50075B2A5 /* BaseCellWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCellWithShadow.swift; sourceTree = "<group>"; };
 		BF776B0A1E654D9B005D64FE /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		BF776B0B1E654D9B005D64FE /* LocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		BF776B161E65B3CF005D64FE /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
@@ -611,6 +619,9 @@
 				BFF2961E1E66F55A00F0287F /* Home */,
 				BFF2962A1E67D11700F0287F /* ProductCell.swift */,
 				BFF2962B1E67D11700F0287F /* ProductCell.xib */,
+				BF3938E41E6C17990075B2A5 /* DemoCell.swift */,
+				BF3938E51E6C17990075B2A5 /* DemoCell.xib */,
+				BF3938EA1E6D14B50075B2A5 /* BaseCellWithShadow.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -694,6 +705,7 @@
 			children = (
 				BFF2963D1E68658D00F0287F /* ListProductsViewController.swift */,
 				BFF296401E6865BA00F0287F /* ListProductsDataSource.swift */,
+				BF3938E81E6D0FD60075B2A5 /* ListProductsDelegate+Handler.swift */,
 			);
 			name = "List Products";
 			sourceTree = "<group>";
@@ -780,6 +792,7 @@
 				BFF295F21E6676D500F0287F /* HightlightPhotoCell.xib in Resources */,
 				BF7DA6BB1E41C4C50064C000 /* Lato-Italic.ttf in Resources */,
 				BF7DA6B81E41C4C50064C000 /* Lato-HairlineItalic.ttf in Resources */,
+				BF3938E71E6C17990075B2A5 /* DemoCell.xib in Resources */,
 				BF86D5BD1E4B0AD700C4F492 /* CategoryDetailCell.xib in Resources */,
 				BF7DA6C21E41C4C50064C000 /* Lato-SemiboldItalic.ttf in Resources */,
 				BF7DA67A1E41C0EC0064C000 /* Assets.xcassets in Resources */,
@@ -873,16 +886,19 @@
 				BFEFB4861E648EEE00A28CC1 /* DeliveryDataSource.swift in Sources */,
 				BF130FBA1E58103600461C6D /* ItemViewController.swift in Sources */,
 				BF9E288E1E4855F600A23E55 /* CategoryViewController.swift in Sources */,
+				BF3938E61E6C17990075B2A5 /* DemoCell.swift in Sources */,
 				BF776B231E65D0A1005D64FE /* HighlightLayout.swift in Sources */,
 				BF130FC01E58185600461C6D /* BaseViewController.swift in Sources */,
 				BFA346DB1E5D78A700DD186E /* CustomNavigationController.swift in Sources */,
 				BF130FBD1E58107200461C6D /* DeliveryViewController.swift in Sources */,
 				BF304B381E575B550069E36D /* ItemTableViewCell.swift in Sources */,
+				BF3938E91E6D0FD60075B2A5 /* ListProductsDelegate+Handler.swift in Sources */,
 				BFA346DD1E5D7BA600DD186E /* FirebaseManager.swift in Sources */,
 				BFF295F11E6676D500F0287F /* HightlightPhotoCell.swift in Sources */,
 				BFF296211E66F60400F0287F /* HomeCategoryCell.swift in Sources */,
 				BFF295E71E66682900F0287F /* CGSize.swift in Sources */,
 				BF304B401E576F500069E36D /* DeliveryTableViewCell.swift in Sources */,
+				BF3938EB1E6D14B50075B2A5 /* BaseCellWithShadow.swift in Sources */,
 				BF86D5B71E4B091C00C4F492 /* CategoryDetailCollectionView.swift in Sources */,
 				BF86D5B41E4B041500C4F492 /* CategoryContainerCell.swift in Sources */,
 				BF304B3C1E575CD00069E36D /* PriceTableViewCell.swift in Sources */,

@@ -19,6 +19,6 @@ class AccountViewController: UIViewController {
     func setupNavigationBar(title: String) {
         self.navigationController?.navigationBar.setup()
         self.navigationItem.title = title
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(logout))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
     }
 }
