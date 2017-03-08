@@ -27,12 +27,26 @@ class Product: NSObject {
         categoryDetail = nil
         title = nil
         detail = nil
-        price = nil
+        price = 0
         locationName = nil
         locationAddress = nil
-        love = nil
-        timestamp = nil
-        sellerID = nil
+        love = 0
+        timestamp = 0
+        sellerID = ""
+        images = []
+    }
+    
+    func resetAll() {
+        category = nil
+        categoryDetail = nil
+        title = nil
+        detail = nil
+        price = 0
+        locationName = nil
+        locationAddress = nil
+        love = 0
+        timestamp = 0
+        sellerID = ""
         images = []
     }
     

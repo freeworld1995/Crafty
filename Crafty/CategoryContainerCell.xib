@@ -53,7 +53,7 @@
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PIL-b4-nky" customClass="CategoryDetailCollectionView" customModule="Crafty" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="50" width="320" height="0.0"/>
-                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.98039215686274506" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" id="Fue-Cx-i22"/>
                         </constraints>

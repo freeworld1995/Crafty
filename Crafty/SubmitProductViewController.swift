@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import ImagePicker
 
-class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavigationControllerDelegate {
+class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavigationControllerDelegate, SetupNavBar {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -31,7 +31,8 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
         super.viewDidLoad()
         product = Product()
         
-        setupNavigationBar(title: "Sell")
+        self.setupNavigationBar(title: "Sell")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(handleSubmitProduct))
         
         tableView.dataSource = dataSource
         tableView.delegate = self
@@ -48,6 +49,8 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateCategory), name: Notification.Name(rawValue: "shareCategory"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateItemDetail), name: Notification.Name(rawValue: "shareItem"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleUpdateDelivery), name: Notification.Name(rawValue: "shareDelivery"), object: nil)
+        
+        checkSubmitCondition()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,19 +64,42 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
         self.navigationItem.changeTitleView(width: self.navigationController!.navigationBar.frame.size.width, height: self.navigationController!.navigationBar.frame.size.height)
     }
     
-    func setupNavigationBar(title: String) {
-        self.navigationController?.navigationBar.setup()
-        self.navigationItem.title = title
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(handleSubmitProduct))
-    }
-    
     func handleSubmitProduct() {
         let cell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! PriceTableViewCell
         product.price = Double(cell.priceTextField.text!) as NSNumber?
         
-        FirebaseManager.handleSubmitProductInfo(product: product, images: imageCollection, viewController: self)
+        FirebaseManager.handleSubmitProductInfo(product: product, images: imageCollection, viewController: self) {
+            self.resetAfterSubmit()
+        }
+        
     }
-
+    
+    func resetAfterSubmit() {
+        imageCollection.forEach {
+            $0.image = UIImage(named: "cameraIcon")
+        }
+        
+        UIView.animate(withDuration: 0.7) {
+            self.rightImageContraint.constant = 130
+            self.leftImageContraint.constant = 130
+            self.view.layoutIfNeeded()
+        }
+        
+        let categoryCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CategoryTableViewCell
+        categoryCell?.categoryDetail.text = "Choose one"
+        
+        let itemCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? ItemTableViewCell
+        itemCell?.itemDetail.text = "Describe your item"
+        
+        let priceCell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? PriceTableViewCell
+        priceCell?.priceTextField.placeholder = "VND 0.00"
+        
+        let deliveryCell = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? DeliveryTableViewCell
+        deliveryCell?.deliveryDetail.text = "Meet-up or Delivery"
+        
+        product.resetAll()
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

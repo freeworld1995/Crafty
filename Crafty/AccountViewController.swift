@@ -8,17 +8,11 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
-    
+class AccountViewController: UIViewController, SetupNavBar {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupNavigationBar(title: "Account")
+        self.setupNavigationBar(title: "Account")
     }
     
-    func setupNavigationBar(title: String) {
-        self.navigationController?.navigationBar.setup()
-        self.navigationItem.title = title
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
-    }
 }

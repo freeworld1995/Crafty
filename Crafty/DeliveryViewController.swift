@@ -55,8 +55,8 @@ class DeliveryViewController: UIViewController {
     }
     
     func backToCategoryVC() {
-        self.navigationController?.popToRootViewController(animated: true)
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "shareDelivery"), object: nil, userInfo: ["locationName": locationName, "locationAddress": locationAddress])
+        _ = self.navigationController?.popToRootViewController(animated: true)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "shareDelivery"), object: nil, userInfo: ["locationName": locationName!, "locationAddress": locationAddress!])
     }
     
     deinit {

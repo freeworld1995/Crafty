@@ -27,6 +27,8 @@
 		BF3938E71E6C17990075B2A5 /* DemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3938E51E6C17990075B2A5 /* DemoCell.xib */; };
 		BF3938E91E6D0FD60075B2A5 /* ListProductsDelegate+Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3938E81E6D0FD60075B2A5 /* ListProductsDelegate+Handler.swift */; };
 		BF3938EB1E6D14B50075B2A5 /* BaseCellWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3938EA1E6D14B50075B2A5 /* BaseCellWithShadow.swift */; };
+		BF6F5DD91E6FFC94005EBAD2 /* SetupNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DD81E6FFC94005EBAD2 /* SetupNavBar.swift */; };
+		BF6F5DDC1E700D5C005EBAD2 /* HADropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DDB1E700D5C005EBAD2 /* HADropDown.swift */; };
 		BF776B0C1E654D9B005D64FE /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF776B0A1E654D9B005D64FE /* LocationTableViewCell.swift */; };
 		BF776B0D1E654D9B005D64FE /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF776B0B1E654D9B005D64FE /* LocationTableViewCell.xib */; };
 		BF776B191E65B3CF005D64FE /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF776B161E65B3CF005D64FE /* NibLoadableView.swift */; };
@@ -130,6 +132,8 @@
 		BF3938E51E6C17990075B2A5 /* DemoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCell.xib; sourceTree = "<group>"; };
 		BF3938E81E6D0FD60075B2A5 /* ListProductsDelegate+Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListProductsDelegate+Handler.swift"; sourceTree = "<group>"; };
 		BF3938EA1E6D14B50075B2A5 /* BaseCellWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCellWithShadow.swift; sourceTree = "<group>"; };
+		BF6F5DD81E6FFC94005EBAD2 /* SetupNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupNavBar.swift; sourceTree = "<group>"; };
+		BF6F5DDB1E700D5C005EBAD2 /* HADropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HADropDown.swift; sourceTree = "<group>"; };
 		BF776B0A1E654D9B005D64FE /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		BF776B0B1E654D9B005D64FE /* LocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		BF776B161E65B3CF005D64FE /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 				BF776B161E65B3CF005D64FE /* NibLoadableView.swift */,
 				BF776B171E65B3CF005D64FE /* ReusableView.swift */,
 				BFF295EA1E66685700F0287F /* Core Graphic */,
+				BF6F5DDB1E700D5C005EBAD2 /* HADropDown.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -339,6 +344,23 @@
 				BF776B0E1E654D9F005D64FE /* InsideDelivery */,
 			);
 			name = CategoryTableCell;
+			sourceTree = "<group>";
+		};
+		BF3938EC1E6D54EF0075B2A5 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				BFF2962A1E67D11700F0287F /* ProductCell.swift */,
+				BFF2962B1E67D11700F0287F /* ProductCell.xib */,
+			);
+			name = Product;
+			sourceTree = "<group>";
+		};
+		BF6F5DDA1E6FFC98005EBAD2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F5DD81E6FFC94005EBAD2 /* SetupNavBar.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		BF776B0E1E654D9F005D64FE /* InsideDelivery */ = {
@@ -395,6 +417,7 @@
 				BF7DA6CC1E41FE4E0064C000 /* Supporting Files */,
 				BF776B151E65B28E005D64FE /* Network */,
 				BFF295EE1E66738300F0287F /* Custom View */,
+				BF6F5DDA1E6FFC98005EBAD2 /* Protocols */,
 			);
 			path = Crafty;
 			sourceTree = "<group>";
@@ -617,8 +640,7 @@
 			children = (
 				BF304B351E575B3A0069E36D /* CategoryTableCell */,
 				BFF2961E1E66F55A00F0287F /* Home */,
-				BFF2962A1E67D11700F0287F /* ProductCell.swift */,
-				BFF2962B1E67D11700F0287F /* ProductCell.xib */,
+				BF3938EC1E6D54EF0075B2A5 /* Product */,
 				BF3938E41E6C17990075B2A5 /* DemoCell.swift */,
 				BF3938E51E6C17990075B2A5 /* DemoCell.xib */,
 				BF3938EA1E6D14B50075B2A5 /* BaseCellWithShadow.swift */,
@@ -897,6 +919,7 @@
 				BFF295F11E6676D500F0287F /* HightlightPhotoCell.swift in Sources */,
 				BFF296211E66F60400F0287F /* HomeCategoryCell.swift in Sources */,
 				BFF295E71E66682900F0287F /* CGSize.swift in Sources */,
+				BF6F5DDC1E700D5C005EBAD2 /* HADropDown.swift in Sources */,
 				BF304B401E576F500069E36D /* DeliveryTableViewCell.swift in Sources */,
 				BF3938EB1E6D14B50075B2A5 /* BaseCellWithShadow.swift in Sources */,
 				BF86D5B71E4B091C00C4F492 /* CategoryDetailCollectionView.swift in Sources */,
@@ -935,6 +958,7 @@
 				BFF2962C1E67D11700F0287F /* ProductCell.swift in Sources */,
 				BFF296381E6853DA00F0287F /* LocationManager.swift in Sources */,
 				BF7DA6D11E42164C0064C000 /* UITextField.swift in Sources */,
+				BF6F5DD91E6FFC94005EBAD2 /* SetupNavBar.swift in Sources */,
 				BFF296321E684CE200F0287F /* AccountDataSource.swift in Sources */,
 				BFF2963E1E68658D00F0287F /* ListProductsViewController.swift in Sources */,
 				BFDB2C581E4398AB0098A0AE /* User.swift in Sources */,

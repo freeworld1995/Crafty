@@ -33,7 +33,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 3:
-            let vc = storyboard?.instantiateViewController(withIdentifier: "productVC")
+            _ = storyboard?.instantiateViewController(withIdentifier: "productVC")
         default:
             let cell = collectionView.cellForItem(at: indexPath) as! HomeCategoryCell
             goToListProductVC(category: cell.title.text!)
@@ -55,6 +55,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func goToListProductVC(category: String) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "productVC") as! ListProductsViewController
         vc.category = category
-        self.navigationController?.present(vc, animated: true, completion: nil)
+        pagingViewController!.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class FirebaseManager: NSObject {
     
-    static func handleSubmitProductInfo(product: Product, images: [UIImageView], viewController controller: UIViewController) {
+    static func handleSubmitProductInfo(product: Product, images: [UIImageView], viewController controller: UIViewController, completion: @escaping () -> ()) {
         
         // Insert images into Storage -> save images URL
         
@@ -56,9 +56,14 @@ class FirebaseManager: NSObject {
                                 return
                             }
                             
+                            DispatchQueue.main.async {
+                                completion()
+                            }
+                            
                             let ac = UIAlertController(title: "Submit Product", message: "Successful", preferredStyle: .alert)
                             ac.addAction(UIAlertAction(title: "OK", style: .default))
                             controller.present(ac, animated: true, completion: nil)
+                            
                         }
                         
                     }
@@ -78,41 +83,37 @@ class FirebaseManager: NSObject {
         
     }
     
-    static func observeProductByCategory(category: String, completion: @escaping (_ result: Bool) -> ()) -> [Product]? {
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return nil }
+    static func observeProductByCategory(category: String, viewController controller: UIViewController, completion: @escaping (_ result: Bool, _ productList: [Product]?) -> ()){
+        guard FIRAuth.auth()?.currentUser?.uid != nil else { return }
         
         var products = [Product]()
         
         let ref = FIRDatabase.database().reference().child("products").queryOrdered(byChild: "category").queryEqual(toValue: "\(category)")
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 dictionary.forEach {
-                    print($0.value)
                     let product = Product()
                     product.setValuesForKeys($0.value as! [String : AnyObject])
-                    print(product.printAll())
+//                    print(product.printAll())
                     //                    if product.sellerID != uid {
                     products.append(product)
                     //                    }
                 }
                 
                 DispatchQueue.main.async {
-                    completion(true)
+                    completion(true, products)
                 }
             }
-            
         }) { (error) in
-            print("Error observing product by category: \(error)")
             DispatchQueue.main.async {
-                completion(false)
+                completion(false, nil)
+                
+                let ac = UIAlertController(title: "Error", message: "Something wrong happen, please try again", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                controller.present(ac, animated: true, completion: nil)
             }
         }
-        print("asshole: \(products.count)")
-        
-        return products
-        
     }
     
     static func getUser(byID userID : String, completion: @escaping (User) -> ()) {

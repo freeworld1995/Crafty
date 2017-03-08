@@ -15,6 +15,8 @@ class HomeViewController: UIViewController, IndicatorInfoProvider {
     
     let datasource = HomeDataSource()
     
+    var pagingViewController: PagingViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

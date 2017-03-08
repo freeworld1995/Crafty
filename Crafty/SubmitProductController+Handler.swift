@@ -21,7 +21,8 @@ extension SubmitProductViewController {
             let indexPath = IndexPath(row: 0, section: 0)
             let cell = tableView.cellForRow(at: indexPath) as! CategoryTableViewCell
             cell.categoryDetail.text = categoryDetail
-            product.categoryDetail = categoryDetail
+            product?.categoryDetail = categoryDetail
+            checkSubmitCondition()
         }
     }
     
@@ -29,30 +30,33 @@ extension SubmitProductViewController {
         if let category = notification.userInfo?["title"] as? String {
             let indexPath = IndexPath(row: 0, section: 0)
             let cell = tableView.cellForRow(at: indexPath) as! CategoryTableViewCell
-            product.category = category
+            product?.category = category
             cell.categoryDetail.text = category
+            checkSubmitCondition()
         }
     }
     
     func handleUpdateItemDetail(notification: Notification) {
         if let title = notification.userInfo?["title"] as? String, let detail = notification.userInfo?["description"] as? String  {
-            product.title = title
-            product.detail = detail
+            product?.title = title
+            product?.detail = detail
             
             let indexPath = IndexPath(row: 1, section: 0)
             let cell = tableView.cellForRow(at: indexPath) as! ItemTableViewCell
             cell.itemDetail.text = title
+            checkSubmitCondition()
         }
     }
     
     func handleUpdateDelivery(notification: Notification) {
         if let locationName = notification.userInfo?["locationName"] as? String, let locationAddress = notification.userInfo?["locationAddress"] as? String {
-            product.locationName = locationName
-            product.locationAddress = locationAddress
+            product?.locationName = locationName
+            product?.locationAddress = locationAddress
             
             let indexPath = IndexPath(row: 3, section: 0)
             let cell = tableView.cellForRow(at: indexPath) as! DeliveryTableViewCell
             cell.deliveryDetail.text = locationName
+            checkSubmitCondition()
         }
     }
     
@@ -85,11 +89,11 @@ extension SubmitProductViewController {
                 self.imageCollection.forEach {
                     self.setImageShadow(image: $0)
                 }
-
+                
                 self.view.layoutIfNeeded()
             }, completion: { (success) in
             })
-
+            
         }
     }
     
@@ -103,5 +107,36 @@ extension SubmitProductViewController {
         image.layer.shadowColor = UIColor.black.cgColor
         image.layer.shadowOpacity = 0.5
         image.layer.shadowRadius = 2
+    }
+    
+    func checkSubmitCondition() {
+        let mirror = Mirror(reflecting: product)
+        
+        var condition = false
+        
+        for child in mirror.children {
+            let value: Any = child.value
+            
+            let subMirror = Mirror(reflecting: value)
+            
+            if subMirror.displayStyle == .optional {
+                if subMirror.children.count == 0 {
+                    condition = false
+                    print("\(child) - nil")
+                    break
+                } else {
+                    print("\(child) - not nil")
+                    condition = true
+                }
+            }
+        }
+        
+        print(condition)
+        
+        if condition {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        }
     }
 }

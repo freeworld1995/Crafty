@@ -21,7 +21,7 @@ class PagingViewController: ButtonBarPagerTabStripViewController {
         settings.style.buttonBarItemsShouldFillAvailableWidth = true
         settings.style.buttonBarLeftContentInset = 0
         settings.style.buttonBarRightContentInset = 0
-   
+        
         moveToViewController(at: 1)
         changeCurrentIndexProgressive = {
             (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
@@ -37,12 +37,13 @@ class PagingViewController: ButtonBarPagerTabStripViewController {
         self.navigationController?.navigationBar.setup()
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationItem.changeTitleView(width: self.navigationController!.navigationBar.frame.size.width, height: self.navigationController!.navigationBar.frame.size.height)
-
+        
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let home1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home1")
-        let home2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home2")
+        let home2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home2")  as! HomeViewController
+        home2.pagingViewController = self
         let home3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "home3")
         
         return [home1, home2, home3]
