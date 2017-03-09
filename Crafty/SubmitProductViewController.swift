@@ -76,7 +76,8 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
     
     func resetAfterSubmit() {
         imageCollection.forEach {
-            $0.image = UIImage(named: "cameraIcon")
+            $0.image = UIImage(named: "takePhoto")
+            resetImageShadow(image: $0)
         }
         
         UIView.animate(withDuration: 0.7) {
@@ -93,6 +94,8 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
         
         let priceCell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as? PriceTableViewCell
         priceCell?.priceTextField.placeholder = "VND 0.00"
+        priceCell?.priceTextField.text = ""
+        priceCell?.priceTextField.resignFirstResponder()
         
         let deliveryCell = tableView.cellForRow(at: IndexPath(row: 3, section: 0)) as? DeliveryTableViewCell
         deliveryCell?.deliveryDetail.text = "Meet-up or Delivery"

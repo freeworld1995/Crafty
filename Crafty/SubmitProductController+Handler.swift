@@ -109,6 +109,13 @@ extension SubmitProductViewController {
         image.layer.shadowRadius = 2
     }
     
+    func resetImageShadow(image: UIImageView) {
+        image.layer.masksToBounds = true
+        image.layer.shadowOffset = CGSize.zero
+        image.layer.shadowOpacity = 0.0
+        image.layer.shadowRadius = 0.0
+    }
+    
     func checkSubmitCondition() {
         let mirror = Mirror(reflecting: product)
         

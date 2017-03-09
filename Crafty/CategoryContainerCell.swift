@@ -10,12 +10,25 @@ import UIKit
 import Lottie
 
 class CategoryContainerCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var labelContainer: UIView!
     @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var separateLine: UIView!
     @IBOutlet weak var collectionView: CategoryDetailCollectionView!
     @IBOutlet weak var categoryDetailHeightConstraint: NSLayoutConstraint!
     var animationView = LOTAnimationView()
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                self.labelContainer.backgroundColor = Color.selectedCellYellow
+                self.separateLine.isHidden = true
+            } else {
+                self.labelContainer.backgroundColor = Color.deselectedCellGray
+                self.separateLine.isHidden = false
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +38,7 @@ class CategoryContainerCell: UICollectionViewCell {
         animationView = LOTAnimationView(name: "data10")
         animationView.frame = CGRect(x: self.labelContainer.frame.width * 0.8, y: 10, width: 30, height: 30)
         animationView.contentMode = .scaleAspectFit
-
+        
         labelContainer.addSubview(animationView)
     }
     
@@ -39,5 +52,5 @@ class CategoryContainerCell: UICollectionViewCell {
             
         }
     }
-
+    
 }

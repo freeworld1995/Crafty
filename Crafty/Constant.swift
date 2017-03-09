@@ -14,4 +14,6 @@ struct Color {
     static let red = UIColor(red:0.93, green:0.38, blue:0.39, alpha:1.00)
     static let green = UIColor(red:0.56, green:0.75, blue:0.70, alpha:1.00)
     static let strongYellow = UIColor(red:0.95, green:0.71, blue:0.38, alpha:1.00)
+    static let selectedCellYellow = UIColor(red:1.00, green:0.98, blue:0.89, alpha:1.00)
+    static let deselectedCellGray = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.00)
 }

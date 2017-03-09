@@ -14,7 +14,6 @@ class ListProductsViewController: UIViewController, SetupNavBar, HADropDownDeleg
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var dropDownList: HADropDown!
 
-    
     let datasource = ListProductsDataSource()
     var category: String?
     
@@ -35,7 +34,47 @@ class ListProductsViewController: UIViewController, SetupNavBar, HADropDownDeleg
                 self.indicator.stopAnimating()
             }
         }
-
+        
+    }
+    
+    func didSelectItem(dropDown: HADropDown, at index: Int) {
+        switch index {
+        case 0:
+            indicator.isHidden = false
+            indicator.startAnimating()
+            FirebaseManager.observeProductByPrice(type: .popularity, category: category!, viewController: self, completion: { (condition, result) in
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
+                if condition {
+                    self.datasource.products = result!
+                    self.collectionView.reloadData()
+                }
+            })
+        case 1:
+            indicator.isHidden = false
+            indicator.startAnimating()
+            FirebaseManager.observeProductByPrice(type: .highest, category: category!, viewController: self, completion: { (condition, result) in
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
+                if condition {
+                    self.datasource.products = result!
+                    self.collectionView.reloadData()
+                }
+            })
+        case 2:
+            indicator.isHidden = false
+            indicator.startAnimating()
+            FirebaseManager.observeProductByPrice(type: .lowest, category: category!, viewController: self, completion: { (condition, result) in
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
+                if condition {
+                    self.datasource.products = result!
+                    self.collectionView.reloadData()
+                }
+            })
+        default:
+            print("fuck")
+        }
     }
 }
 

@@ -80,6 +80,7 @@
                 <outlet property="categoryLabel" destination="IhS-1M-znd" id="H5a-Tv-zpJ"/>
                 <outlet property="collectionView" destination="PIL-b4-nky" id="2jm-JS-wxd"/>
                 <outlet property="labelContainer" destination="lPz-eN-qss" id="UuV-II-Avs"/>
+                <outlet property="separateLine" destination="xEs-rP-FkO" id="ldh-H2-Mef"/>
             </connections>
             <point key="canvasLocation" x="146" y="100"/>
         </collectionViewCell>

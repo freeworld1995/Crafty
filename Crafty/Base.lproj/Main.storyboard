@@ -28,316 +28,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Login Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="Crafty" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Z87-mZ-6Bx">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crafty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EA5-kp-QTT">
-                                <rect key="frame" x="97" y="43" width="126.5" height="87"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="87" id="ySM-36-mdw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Brusher-Regular" family="Brusher" pointSize="48"/>
-                                <color key="textColor" red="0.95294117647058818" green="0.70980392156862748" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handmade goods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etL-1B-jVT">
-                                <rect key="frame" x="59.5" y="131" width="202.5" height="32"/>
-                                <fontDescription key="fontDescription" name="Lato-Thin" family="Lato" pointSize="27"/>
-                                <color key="textColor" red="0.95294117649999999" green="0.70980392160000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" text="freeworld1995" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7I-60-4M3" customClass="CustomTextField" customModule="Crafty" customModuleProvider="target">
-                                <rect key="frame" x="44" y="207" width="232" height="51"/>
-                                <color key="backgroundColor" red="0.070588235294117646" green="0.043137254901960784" blue="0.043137254901960784" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="232" id="3VB-Sl-BKm"/>
-                                    <constraint firstAttribute="height" constant="51" id="l5O-t8-2xM"/>
-                                </constraints>
-                                <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYR-6a-7QR">
-                                <rect key="frame" x="50" y="209" width="25" height="12"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
-                                <color key="textColor" red="0.94901960784313721" green="0.92156862745098034" blue="0.74901960784313726" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" text="********************************" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Xa-bg-6gx" customClass="CustomTextField" customModule="Crafty" customModuleProvider="target">
-                                <rect key="frame" x="44" y="266" width="232" height="51"/>
-                                <color key="backgroundColor" red="0.070588235289999995" green="0.043137254899999998" blue="0.043137254899999998" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="LlA-8w-AJS"/>
-                                    <constraint firstAttribute="width" constant="232" id="reJ-0s-ARd"/>
-                                </constraints>
-                                <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qik-SO-GoJ">
-                                <rect key="frame" x="51" y="269" width="43" height="12"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
-                                <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nms-6i-eyu">
-                                <rect key="frame" x="44" y="430" width="232" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Login With Email">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="1Xa-bg-6gx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1yd-EB-DVk"/>
-                            <constraint firstItem="EA5-kp-QTT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="4r2-wj-Whn"/>
-                            <constraint firstItem="etL-1B-jVT" firstAttribute="top" secondItem="EA5-kp-QTT" secondAttribute="bottom" constant="1" id="7wf-Xw-ndj"/>
-                            <constraint firstItem="Z87-mZ-6Bx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="94g-sY-Qww"/>
-                            <constraint firstItem="p7I-60-4M3" firstAttribute="top" secondItem="iYR-6a-7QR" secondAttribute="bottom" constant="-14" id="AoL-jd-gON"/>
-                            <constraint firstItem="1Xa-bg-6gx" firstAttribute="top" secondItem="p7I-60-4M3" secondAttribute="bottom" constant="8" id="Gyo-71-b8g"/>
-                            <constraint firstItem="Z87-mZ-6Bx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="M7D-Xp-USR"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Z87-mZ-6Bx" secondAttribute="bottom" id="MFz-Hn-Qfa"/>
-                            <constraint firstItem="1Xa-bg-6gx" firstAttribute="leading" secondItem="Qik-SO-GoJ" secondAttribute="trailing" constant="-49.5" id="OG2-01-XQW"/>
-                            <constraint firstItem="p7I-60-4M3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TqZ-33-L8t"/>
-                            <constraint firstItem="EA5-kp-QTT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e3Z-Jo-mSx"/>
-                            <constraint firstAttribute="trailing" secondItem="Z87-mZ-6Bx" secondAttribute="trailing" id="hRa-mC-iiD"/>
-                            <constraint firstItem="p7I-60-4M3" firstAttribute="top" secondItem="etL-1B-jVT" secondAttribute="bottom" constant="43.5" id="j0Y-6m-dQZ"/>
-                            <constraint firstItem="1Xa-bg-6gx" firstAttribute="top" secondItem="Qik-SO-GoJ" secondAttribute="bottom" constant="-15" id="jHx-BE-jkK"/>
-                            <constraint firstItem="etL-1B-jVT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kDn-bX-Oo7"/>
-                            <constraint firstItem="p7I-60-4M3" firstAttribute="leading" secondItem="iYR-6a-7QR" secondAttribute="trailing" constant="-30.5" id="zsf-Cr-NYZ"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="nameTextField" destination="p7I-60-4M3" id="mAJ-2C-unL"/>
-                        <outlet property="passwordTextField" destination="1Xa-bg-6gx" id="M36-Ts-n2r"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-178" y="120"/>
-        </scene>
-        <!--Register Controller-->
-        <scene sceneID="5hq-wF-kwX">
-            <objects>
-                <viewController id="Dad-1S-YbG" customClass="RegisterController" customModule="Crafty" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sPX-Wr-5ER"/>
-                        <viewControllerLayoutGuide type="bottom" id="mpl-CV-duT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Cvf-w3-S6a">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="UTl-hO-p3F">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4VR-Dz-iBq">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crafty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mmo-dQ-GXn">
-                                <rect key="frame" x="97.5" y="20" width="126.5" height="87"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="87" id="mWc-5u-Tr3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Brusher-Regular" family="Brusher" pointSize="48"/>
-                                <color key="textColor" red="0.95294117649999999" green="0.70980392160000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handmade goods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERd-eG-Baz">
-                                <rect key="frame" x="59" y="107" width="202.5" height="32"/>
-                                <fontDescription key="fontDescription" name="Lato-Thin" family="Lato" pointSize="27"/>
-                                <color key="textColor" red="0.95294117649999999" green="0.70980392160000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="eg: abc@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wqy-Db-dzQ" customClass="CustomTextField" customModule="Crafty" customModuleProvider="target">
-                                <rect key="frame" x="44" y="353" width="232" height="51"/>
-                                <color key="backgroundColor" red="0.070588235289999995" green="0.043137254899999998" blue="0.043137254899999998" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="232" id="1a4-WG-WHc"/>
-                                    <constraint firstAttribute="height" constant="51" id="Fbe-yB-cHX"/>
-                                </constraints>
-                                <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                        <color key="value" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dN2-zZ-lpp">
-                                <rect key="frame" x="50" y="355" width="25" height="12"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
-                                <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" text="Keep it for yourself" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mIo-xf-Qcn" customClass="CustomTextField" customModule="Crafty" customModuleProvider="target">
-                                <rect key="frame" x="44" y="412" width="232" height="51"/>
-                                <color key="backgroundColor" red="0.070588235289999995" green="0.043137254899999998" blue="0.043137254899999998" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="232" id="JOk-I6-Jj8"/>
-                                    <constraint firstAttribute="height" constant="51" id="kvC-ar-UyU"/>
-                                </constraints>
-                                <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                        <color key="value" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpi-R6-8c7">
-                                <rect key="frame" x="51" y="415" width="43" height="12"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
-                                <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUH-HN-3Wl">
-                                <rect key="frame" x="44" y="485" width="232" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="registerPressed:" destination="Dad-1S-YbG" eventType="touchUpInside" id="z7Y-FK-G1F"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="eg: Jimmy Hoang" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0B-yn-q7C" customClass="CustomTextField" customModule="Crafty" customModuleProvider="target">
-                                <rect key="frame" x="44" y="294" width="232" height="51"/>
-                                <color key="backgroundColor" red="0.070588235289999995" green="0.043137254899999998" blue="0.043137254899999998" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="IZo-zd-xwS"/>
-                                    <constraint firstAttribute="width" constant="232" id="bp6-He-Ybh"/>
-                                </constraints>
-                                <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                        <color key="value" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ZLF-bJ-9nK">
-                                <rect key="frame" x="118" y="201" width="85" height="85"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ZLF-bJ-9nK" secondAttribute="height" multiplier="1:1" id="AJd-D8-blb"/>
-                                    <constraint firstAttribute="height" constant="85" id="UOE-iZ-kNt"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOw-TI-Ydl">
-                                <rect key="frame" x="50" y="297" width="27" height="12"/>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
-                                <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="rBM-sR-4yD">
-                                <rect key="frame" x="70" y="147" width="180" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="Bq0-0C-th2"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Login"/>
-                                    <segment title="Register"/>
-                                </segments>
-                                <color key="tintColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="LoginRegisterSegmentPressed:" destination="Dad-1S-YbG" eventType="valueChanged" id="u1M-Dd-m9H"/>
-                                </connections>
-                            </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="ZLF-bJ-9nK" firstAttribute="centerX" secondItem="Cvf-w3-S6a" secondAttribute="centerX" id="0S6-Xt-vUr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4VR-Dz-iBq" secondAttribute="trailing" constant="-16" id="1gD-7z-AFf"/>
-                            <constraint firstItem="Wqy-Db-dzQ" firstAttribute="centerX" secondItem="Cvf-w3-S6a" secondAttribute="centerX" id="3uf-Dk-58R"/>
-                            <constraint firstItem="B0B-yn-q7C" firstAttribute="top" secondItem="ZLF-bJ-9nK" secondAttribute="bottom" constant="8" id="8lM-gD-CrV"/>
-                            <constraint firstItem="B0B-yn-q7C" firstAttribute="leading" secondItem="VOw-TI-Ydl" secondAttribute="trailing" constant="-33" id="Akq-o3-IOS"/>
-                            <constraint firstItem="ERd-eG-Baz" firstAttribute="top" secondItem="Mmo-dQ-GXn" secondAttribute="bottom" id="BEM-Hp-HV9"/>
-                            <constraint firstItem="mIo-xf-Qcn" firstAttribute="centerX" secondItem="Cvf-w3-S6a" secondAttribute="centerX" id="DKz-dZ-8EY"/>
-                            <constraint firstAttribute="trailing" secondItem="UTl-hO-p3F" secondAttribute="trailing" id="FQx-u5-BQf"/>
-                            <constraint firstItem="mIo-xf-Qcn" firstAttribute="leading" secondItem="Xpi-R6-8c7" secondAttribute="trailing" constant="-50" id="Hza-I4-Sln"/>
-                            <constraint firstItem="UTl-hO-p3F" firstAttribute="leading" secondItem="Cvf-w3-S6a" secondAttribute="leading" id="LBb-Bl-XG2"/>
-                            <constraint firstItem="mIo-xf-Qcn" firstAttribute="top" secondItem="Wqy-Db-dzQ" secondAttribute="bottom" constant="8" id="LQf-iE-uEE"/>
-                            <constraint firstItem="ERd-eG-Baz" firstAttribute="centerX" secondItem="Cvf-w3-S6a" secondAttribute="centerX" id="M6E-c4-zbY"/>
-                            <constraint firstItem="4VR-Dz-iBq" firstAttribute="leading" secondItem="Cvf-w3-S6a" secondAttribute="leadingMargin" constant="-16" id="Md3-Du-5bC"/>
-                            <constraint firstItem="mpl-CV-duT" firstAttribute="top" secondItem="UTl-hO-p3F" secondAttribute="bottom" id="O1r-cg-Pjn"/>
-                            <constraint firstItem="rBM-sR-4yD" firstAttribute="top" secondItem="ERd-eG-Baz" secondAttribute="bottom" constant="7.5" id="VE3-qT-8HW"/>
-                            <constraint firstItem="Mmo-dQ-GXn" firstAttribute="top" secondItem="sPX-Wr-5ER" secondAttribute="bottom" id="WVh-Hp-tFu"/>
-                            <constraint firstItem="mIo-xf-Qcn" firstAttribute="top" secondItem="Xpi-R6-8c7" secondAttribute="bottom" constant="-15" id="YgL-yW-yPd"/>
-                            <constraint firstItem="B0B-yn-q7C" firstAttribute="centerX" secondItem="Cvf-w3-S6a" secondAttribute="centerX" id="ZAE-NW-y9r"/>
-                            <constraint firstItem="rBM-sR-4yD" firstAttribute="centerX" secondItem="Cvf-w3-S6a" secondAttribute="centerX" id="ZVP-yV-VkY"/>
-                            <constraint firstItem="ZLF-bJ-9nK" firstAttribute="top" secondItem="rBM-sR-4yD" secondAttribute="bottom" constant="26" id="ZzT-xM-7df"/>
-                            <constraint firstItem="mpl-CV-duT" firstAttribute="top" secondItem="4VR-Dz-iBq" secondAttribute="bottom" id="atp-0L-wwl"/>
-                            <constraint firstItem="B0B-yn-q7C" firstAttribute="top" secondItem="VOw-TI-Ydl" secondAttribute="bottom" constant="-15" id="brA-Yc-152"/>
-                            <constraint firstItem="Wqy-Db-dzQ" firstAttribute="leading" secondItem="dN2-zZ-lpp" secondAttribute="trailing" constant="-31" id="feN-fW-ko3"/>
-                            <constraint firstItem="Wqy-Db-dzQ" firstAttribute="top" secondItem="B0B-yn-q7C" secondAttribute="bottom" constant="8" id="gII-vt-Rzc"/>
-                            <constraint firstItem="Mmo-dQ-GXn" firstAttribute="centerX" secondItem="Cvf-w3-S6a" secondAttribute="centerX" id="iPx-3R-2ZI"/>
-                            <constraint firstItem="4VR-Dz-iBq" firstAttribute="top" secondItem="sPX-Wr-5ER" secondAttribute="bottom" constant="-20" id="k23-02-zys"/>
-                            <constraint firstItem="Wqy-Db-dzQ" firstAttribute="top" secondItem="dN2-zZ-lpp" secondAttribute="bottom" constant="-14" id="qvh-v9-Ekr"/>
-                            <constraint firstItem="UTl-hO-p3F" firstAttribute="top" secondItem="Cvf-w3-S6a" secondAttribute="top" id="rh6-B5-zQB"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="imageViewHeight" destination="UOE-iZ-kNt" id="KMa-gi-0dJ"/>
-                        <outlet property="nameLabel" destination="VOw-TI-Ydl" id="KGa-gN-z3l"/>
-                        <outlet property="nameTextFieldHeight" destination="IZo-zd-xwS" id="0qS-A2-b9v"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h69-A9-v7C" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1641" y="121"/>
-        </scene>
         <!--List Products View Controller-->
         <scene sceneID="f3C-Uf-0Tk">
             <objects>
@@ -367,7 +57,7 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xe7-fU-KDL" customClass="HADropDown" customModule="Crafty" customModuleProvider="target">
-                                <rect key="frame" x="8" y="24.5" width="304" height="36"/>
+                                <rect key="frame" x="8" y="25" width="304" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.98039215686274506" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="pjP-ab-NYv"/>
@@ -389,7 +79,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKL-Sd-8Ui">
-                                <rect key="frame" x="146.5" y="4" width="27.5" height="14.5"/>
+                                <rect key="frame" x="146" y="4" width="28" height="15"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -416,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ltR-mr-1td" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2603" y="2980"/>
+            <point key="canvasLocation" x="-2499" y="2930"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Ndc-d3-vQA">
@@ -434,13 +124,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqG-aY-rj7">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="572"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="573"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-ao-P7y">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="572"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="573"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crafty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhd-0R-h2Q">
-                                                <rect key="frame" x="97.5" y="26" width="126.5" height="87"/>
+                                                <rect key="frame" x="97" y="26" width="127" height="87"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="87" id="N2U-dv-zQd"/>
                                                 </constraints>
@@ -449,13 +139,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handmade goods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yM8-Lt-NRz">
-                                                <rect key="frame" x="59" y="113" width="202.5" height="32"/>
+                                                <rect key="frame" x="59" y="113" width="203" height="33"/>
                                                 <fontDescription key="fontDescription" name="Lato-Thin" family="Lato" pointSize="27"/>
                                                 <color key="textColor" red="0.95294117649999999" green="0.70980392160000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1K-aY-1KZ">
-                                                <rect key="frame" x="44" y="499" width="232" height="49"/>
+                                                <rect key="frame" x="44" y="500" width="232" height="49"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="guF-hA-tSL"/>
@@ -474,7 +164,7 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="w2h-vg-Pac">
-                                                <rect key="frame" x="117" y="197" width="85" height="85"/>
+                                                <rect key="frame" x="117" y="198" width="85" height="85"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="w2h-vg-Pac" secondAttribute="height" multiplier="1:1" id="fGn-ce-IVe"/>
                                                     <constraint firstAttribute="height" constant="85" id="u7K-mQ-pXH"/>
@@ -486,7 +176,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="eg: Jimmy Hoang" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5r7-Pe-QHO" customClass="CustomTextField" customModule="Crafty" customModuleProvider="target">
-                                                <rect key="frame" x="44" y="298" width="232" height="51"/>
+                                                <rect key="frame" x="44" y="299" width="232" height="51"/>
                                                 <color key="backgroundColor" red="0.070588235289999995" green="0.043137254899999998" blue="0.043137254899999998" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="aQI-fI-dW1"/>
@@ -508,13 +198,13 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7z-5X-KZ0">
-                                                <rect key="frame" x="53" y="306" width="27" height="12"/>
+                                                <rect key="frame" x="53" y="307" width="27" height="12"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
                                                 <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="eg: abc@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6xx-Rz-h6t" customClass="CustomTextField" customModule="Crafty" customModuleProvider="target">
-                                                <rect key="frame" x="44" y="357" width="232" height="51"/>
+                                                <rect key="frame" x="44" y="358" width="232" height="51"/>
                                                 <color key="backgroundColor" red="0.070588235289999995" green="0.043137254899999998" blue="0.043137254899999998" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="232" id="2tn-Jn-MAj"/>
@@ -536,13 +226,13 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrg-de-91C">
-                                                <rect key="frame" x="52" y="360" width="25" height="12"/>
+                                                <rect key="frame" x="52" y="361" width="25" height="12"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
                                                 <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="eg: not 123456" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ys3-dB-hwz" customClass="CustomTextField" customModule="Crafty" customModuleProvider="target">
-                                                <rect key="frame" x="44" y="416" width="232" height="51"/>
+                                                <rect key="frame" x="44" y="417" width="232" height="51"/>
                                                 <color key="backgroundColor" red="0.070588235289999995" green="0.043137254899999998" blue="0.043137254899999998" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="232" id="Tfn-x1-fsJ"/>
@@ -564,13 +254,13 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMX-eg-N2n">
-                                                <rect key="frame" x="54" y="420" width="43" height="12"/>
+                                                <rect key="frame" x="54" y="421" width="43" height="12"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
                                                 <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="YMP-eM-w7I">
-                                                <rect key="frame" x="70" y="153" width="180" height="29"/>
+                                                <rect key="frame" x="70" y="154" width="180" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="xpq-LS-FRR"/>
                                                     <constraint firstAttribute="width" constant="180" id="zG1-h1-giD"/>
@@ -652,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2YV-CX-IzH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="122"/>
+            <point key="canvasLocation" x="1238" y="91"/>
         </scene>
         <!--Crafty-->
         <scene sceneID="MuJ-1W-T5D">
@@ -703,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kB6-Dc-zfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1052" y="1569"/>
+            <point key="canvasLocation" x="-958" y="1569"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="eCm-Gy-5GY">
@@ -744,7 +434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pe-9A-T1W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2659" y="2224"/>
+            <point key="canvasLocation" x="-2498" y="2250"/>
         </scene>
         <!--Recommendation View Controller-->
         <scene sceneID="mNE-kT-jKo">
@@ -771,7 +461,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upM-hY-QTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1888" y="2224"/>
+            <point key="canvasLocation" x="-1734" y="2250"/>
         </scene>
         <!--Last Updated View Controller-->
         <scene sceneID="xWC-Zm-fVi">
@@ -798,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4n2-nx-rGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1054" y="2224"/>
+            <point key="canvasLocation" x="-958" y="2250"/>
         </scene>
         <!--Crafty-->
         <scene sceneID="9Uc-9h-Csr">
@@ -960,7 +650,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose one" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LA-Vl-PIj">
-                                                    <rect key="frame" x="224" y="19.5" width="63" height="14"/>
+                                                    <rect key="frame" x="224" y="19" width="63" height="15"/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                     <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="0.4923812072" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -997,7 +687,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Describe your item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyq-g5-YIz">
-                                                    <rect key="frame" x="187.5" y="19.5" width="99.5" height="14"/>
+                                                    <rect key="frame" x="187" y="19" width="100" height="15"/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                     <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="0.4923812072" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1125,7 +815,7 @@
                 <viewControllerPlaceholder storyboardName="bach" id="br0-Wb-I6B" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Vw-Gu-SEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="2691"/>
+            <point key="canvasLocation" x="638" y="3170"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="LBK-dN-JH3">
@@ -1165,7 +855,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4H-GT-zAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2229.375" y="2433.8028169014083"/>
+            <point key="canvasLocation" x="1463" y="2302"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="Yha-4o-crN">
@@ -1253,7 +943,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fye-n1-0dd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3022.5" y="2433.8028169014083"/>
+            <point key="canvasLocation" x="2222" y="2302"/>
         </scene>
         <!--Delivery View Controller-->
         <scene sceneID="LAq-vP-2Mv">
@@ -1324,7 +1014,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jx1-9L-0RB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3908" y="2434"/>
+            <point key="canvasLocation" x="3113" y="2302"/>
         </scene>
         <!--Crafty-->
         <scene sceneID="Otf-Gi-Ve5">
@@ -1403,7 +1093,7 @@
                     </userDefinedRuntimeAttributes>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="-1888" y="1569"/>
+            <point key="canvasLocation" x="-1733" y="1569"/>
         </scene>
         <!--Animated Tab Bar Controller-->
         <scene sceneID="CUD-ZI-igG">
