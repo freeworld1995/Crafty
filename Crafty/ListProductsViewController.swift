@@ -42,7 +42,7 @@ class ListProductsViewController: UIViewController, SetupNavBar, HADropDownDeleg
         case 0:
             indicator.isHidden = false
             indicator.startAnimating()
-            FirebaseManager.observeProductByPrice(type: .popularity, category: category!, viewController: self, completion: { (condition, result) in
+            FirebaseManager.observeSortedProduct(type: .popularity, category: category!, viewController: self, completion: { (condition, result) in
                 self.indicator.stopAnimating()
                 self.indicator.isHidden = true
                 if condition {
@@ -53,7 +53,7 @@ class ListProductsViewController: UIViewController, SetupNavBar, HADropDownDeleg
         case 1:
             indicator.isHidden = false
             indicator.startAnimating()
-            FirebaseManager.observeProductByPrice(type: .highest, category: category!, viewController: self, completion: { (condition, result) in
+            FirebaseManager.observeSortedProduct(type: .highest, category: category!, viewController: self, completion: { (condition, result) in
                 self.indicator.stopAnimating()
                 self.indicator.isHidden = true
                 if condition {
@@ -64,7 +64,7 @@ class ListProductsViewController: UIViewController, SetupNavBar, HADropDownDeleg
         case 2:
             indicator.isHidden = false
             indicator.startAnimating()
-            FirebaseManager.observeProductByPrice(type: .lowest, category: category!, viewController: self, completion: { (condition, result) in
+            FirebaseManager.observeSortedProduct(type: .lowest, category: category!, viewController: self, completion: { (condition, result) in
                 self.indicator.stopAnimating()
                 self.indicator.isHidden = true
                 if condition {

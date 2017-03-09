@@ -8,3 +8,17 @@
 
 import UIKit
 import Firebase
+
+class AccountDataSource: NSObject, UICollectionViewDataSource {
+    var products: [Product] = []
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return products.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as ProductCell
+        return cell
+    }
+}

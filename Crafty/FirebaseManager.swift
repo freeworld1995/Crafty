@@ -72,6 +72,16 @@ class FirebaseManager: NSObject {
                                 // Complete denormalize
                             })
                             
+                            let userProductRef = FIRDatabase.database().reference().child("userProducts").child(sellerID!)
+                            
+                            userProductRef.updateChildValues(values, withCompletionBlock: { (error, ref) in
+                                if error != nil {
+                                    print(error!)
+                                    return
+                                }
+                                // Complete denormalize
+                            })
+                            
                             DispatchQueue.main.async {
                                 completion() // reload tableview at viewController
                             }
@@ -81,9 +91,7 @@ class FirebaseManager: NSObject {
                             controller.present(ac, animated: true, completion: nil)
                             
                         }
-                        
                     }
-                    
                 })
             }
         }
@@ -123,11 +131,11 @@ class FirebaseManager: NSObject {
         }
     }
     
-    static func observeProductByPrice(type: SortingType, category: String, viewController controller: UIViewController, completion: @escaping (_ result: Bool, _ productList: [Product]?) -> ()) {
+    static func observeSortedProduct(type: SortingType, category: String, viewController controller: UIViewController, completion: @escaping (_ result: Bool, _ productList: [Product]?) -> ()) {
         guard FIRAuth.auth()?.currentUser?.uid != nil else { return }
         
         var products = [Product]()
-
+        
         let ref = FIRDatabase.database().reference().child("productCategory").child(category)
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -174,6 +182,42 @@ class FirebaseManager: NSObject {
         })
         
     }
+    
+    static func observeProductByUser(userID: String, viewController controller: UIViewController, completion: @escaping (_ result: Bool, _ productList: [Product]?) -> ()) {
+        guard FIRAuth.auth()?.currentUser?.uid != nil else { return }
+        
+        var products = [Product]()
+        
+        let ref = FIRDatabase.database().reference().child("userProducts").queryEqual(toValue: userID)
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                dictionary.forEach {
+                    let product = Product()
+                    product.setValuesForKeys($0.value as! [String : AnyObject])
+                    products.append(product)
+                }
+                
+                DispatchQueue.main.async {
+                    completion(true, products)
+                }
+            }
+        }) { (error) in
+            print("fetch user products error: \(error)")
+            
+            DispatchQueue.main.async {
+                completion(false, nil)
+                
+                let ac = UIAlertController(title: "Error", message: "Something wrong happen, please try again", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                controller.present(ac, animated: true, completion: nil)
+            }
+            
+        }
+        
+    }
+    
+    
     
     static func getUser(byID userID : String, completion: @escaping (User) -> ()) {
         
