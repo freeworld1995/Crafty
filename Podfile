@@ -21,4 +21,5 @@ target 'Crafty' do
   pod "Hero"
   pod 'XLPagerTabStrip', '~> 7.0'
   pod 'SwiftyJSON'
+  pod ‘DOFavoriteButton’, :git => ‘https://github.com/okmr-d/DOFavoriteButton’ 
 end

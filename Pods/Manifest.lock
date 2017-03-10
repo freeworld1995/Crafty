@@ -1,4 +1,5 @@
 PODS:
+  - DOFavoriteButton (0.0.4)
   - Firebase/Auth (3.14.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
@@ -63,6 +64,7 @@ PODS:
   - XLPagerTabStrip (7.0.0)
 
 DEPENDENCIES:
+  - DOFavoriteButton (from `https://github.com/okmr-d/DOFavoriteButton`)
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
@@ -80,7 +82,17 @@ DEPENDENCIES:
   - SwiftyJSON
   - XLPagerTabStrip (~> 7.0)
 
+EXTERNAL SOURCES:
+  DOFavoriteButton:
+    :git: https://github.com/okmr-d/DOFavoriteButton
+
+CHECKOUT OPTIONS:
+  DOFavoriteButton:
+    :commit: 43c65253d4c14e596a511354ca0e0aac0ec2bd5c
+    :git: https://github.com/okmr-d/DOFavoriteButton
+
 SPEC CHECKSUMS:
+  DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
   Firebase: 85a581fb04e44f63ae9f4fbc8d6dabf4a4c18653
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
@@ -104,6 +116,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 7107a4c425563a7431a5eed258cd70f83c21301b
+PODFILE CHECKSUM: 0c16013adb2264acaf6991abb737ce089977556d
 
 COCOAPODS: 1.2.0
