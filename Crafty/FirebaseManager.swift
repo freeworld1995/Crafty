@@ -217,8 +217,6 @@ class FirebaseManager: NSObject {
         
     }
     
-    
-    
     static func getUser(byID userID : String, completion: @escaping (User) -> ()) {
         
         let userRef = FIRDatabase.database().reference().child("users").child(userID)

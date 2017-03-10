@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lM2-b7-oDn">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,13 +19,13 @@
         <!--Product View Controller-->
         <scene sceneID="LIQ-3l-kDw">
             <objects>
-                <viewController id="lM2-b7-oDn" customClass="ProductViewController" customModule="Crafty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="productVC" id="lM2-b7-oDn" customClass="ProductViewController" customModule="Crafty" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eZc-5K-iA7"/>
                         <viewControllerLayoutGuide type="bottom" id="omr-tI-E5b"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZP3-Uz-RgT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="237" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="neX-0o-CZH">
@@ -39,7 +39,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hillary" translatesAutoresizingMaskIntoConstraints="NO" id="5P3-Kr-A1v">
                                             <rect key="frame" x="0.0" y="8" width="320" height="155"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B568D35F-95BB-4895-9C3B-03E4E658E63D" translatesAutoresizingMaskIntoConstraints="NO" id="xFN-QO-xkc">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="402D9BD8-C418-48FA-8AAC-F5742CFAB115" translatesAutoresizingMaskIntoConstraints="NO" id="xFN-QO-xkc">
                                             <rect key="frame" x="211" y="127" width="101" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="hKg-K1-FLf"/>
@@ -238,7 +238,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="B568D35F-95BB-4895-9C3B-03E4E658E63D" width="300" height="200">
+        <image name="402D9BD8-C418-48FA-8AAC-F5742CFAB115" width="300" height="200">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

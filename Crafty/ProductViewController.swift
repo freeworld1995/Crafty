@@ -9,10 +9,10 @@
 import UIKit
 
 class ProductViewController: UIViewController {
- 
-
-    @IBOutlet weak var tableview: UITableView!
     
+    
+    @IBOutlet weak var tableview: UITableView!
+    var product: Product!
     var headerView: ProductViewHeader1!
     var headerMaskLayer: CAShapeLayer!
     var tableHeaderHeight: CGFloat = 290.0
@@ -23,7 +23,8 @@ class ProductViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-      headerView = tableview.tableHeaderView as! ProductViewHeader1
+        
+        headerView = tableview.tableHeaderView as! ProductViewHeader1
         tableview.tableHeaderView = nil
         tableview.addSubview(headerView)
         tableview.contentInset = UIEdgeInsetsMake(tableHeaderHeight, 0, 0, 0)
@@ -90,7 +91,7 @@ extension ProductViewController: UITableViewDataSource{
             let cell1 = tableView.dequeueReusableCell(withIdentifier: StoryBoard.tableViewCellIdentifier1, for: indexPath) as UITableViewCell
             return cell1
         }
-      
+        
     }
     
 }

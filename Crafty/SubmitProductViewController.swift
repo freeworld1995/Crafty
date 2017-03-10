@@ -101,6 +101,8 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
         deliveryCell?.deliveryDetail.text = "Meet-up or Delivery"
         
         product.resetAll()
+        
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

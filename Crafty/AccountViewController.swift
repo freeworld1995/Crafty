@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import SDWebImage
 
 class AccountViewController: UIViewController, SetupNavBar {
     
@@ -15,10 +17,33 @@ class AccountViewController: UIViewController, SetupNavBar {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userCity: UILabel!
     @IBOutlet weak var userEmail: UILabel!
-
+    
+    let datasource = AccountDataSource()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        userProfileImage.layer.cornerRadius = userProfileImage.frame.width / 2
+        userProfileImage.layer.masksToBounds = true
+        
         self.setupNavigationBar(title: "Account")
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
+        
+        
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        FirebaseManager.observeProductByUser(userID: userID!, viewController: self) { (condition, result) in
+            if condition {
+                self.datasource.products = result!
+            }
+        }
+        
+        FirebaseManager.getUser(byID: userID!) { (user) in
+            self.userProfileImage.sd_setImage(with: URL(string: user.profileImageUrl!))
+            self.userName.text = user.name
+            self.userCity.text = user.city
+            self.userEmail.text = user.email
+        }
     }
     
 }

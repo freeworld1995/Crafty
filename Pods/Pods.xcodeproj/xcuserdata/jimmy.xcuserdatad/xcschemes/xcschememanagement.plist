@@ -4,84 +4,124 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DOFavoriteButton.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Hero.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>ImagePicker-ImagePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>ImagePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>KMPlaceholderTextView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 		<key>Pods-Crafty.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>8</integer>
 		</dict>
 		<key>RAMAnimatedTabBarController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>RxCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>RxSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>11</integer>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>12</integer>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>13</integer>
 		</dict>
 		<key>XLPagerTabStrip-XLPagerTabStrip.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>15</integer>
 		</dict>
 		<key>XLPagerTabStrip.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>14</integer>
 		</dict>
 		<key>lottie-ios.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>00DE9F98A92D11F30B5ED6722153D57C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>00F2E790288BE01BC542992AE5C11B1C</key>
 		<dict>
 			<key>primary</key>
@@ -97,12 +137,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>122C02733BB23A6FE44EC07561C9AC79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>18257597D86A80BAB809E75DB2A996D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1B9F77ECF8EDB4E1E286A3A8ED10F30E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3BFF9F651824EF6D7159B996DAA71D25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>460741C47A1A04890C807AC61B90EBE8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -113,6 +168,11 @@
 			<true/>
 		</dict>
 		<key>4DDAFF06610C932DB872F1F46CDA84C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53CC625B67863849A5117FA91AD4C88B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,12 +192,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8DDAE1BF3BF950DD93BDAFD28A3E1BF0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>91607EBC8B2B291721F61A5FEBA27C66</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>9314DB30A3210AFFCC8A617DAE5CE257</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5668E2DFE4CC5E97ADDB79845C318AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,7 +222,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C147FB851C4B97A7B663598589B9ABA5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D53804E34279A83A61915C6ACA3C0D06</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD286A0C6FDD8E7E0239A70113D1CF8E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

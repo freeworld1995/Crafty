@@ -513,6 +513,10 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qg0-N2-S7j">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qg0-N2-S7j" secondAttribute="height" multiplier="1:1" id="5e1-BY-no1"/>
+                                            <constraint firstAttribute="height" constant="120" id="NS6-NE-fsT"/>
+                                        </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="okO-df-TLp">
                                         <rect key="frame" x="136" y="0.0" width="168" height="109"/>
@@ -597,12 +601,15 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="4xd-nD-pk4"/>
+                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTI-M8-lIL">
                                 <rect key="frame" x="8" y="214" width="304" height="27"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9KK-cb-G4w">
-                                        <rect key="frame" x="107.5" y="0.5" width="90.5" height="26.5"/>
+                                        <rect key="frame" x="107.5" y="1" width="90.5" height="26.5"/>
                                         <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="22"/>
                                         <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -701,14 +708,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtm-rg-qzE">
-                                <rect key="frame" x="138" y="422" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="br0-Wb-I6B" kind="show" id="ZRN-bx-yiL"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -972,7 +971,7 @@
                 <viewControllerPlaceholder storyboardName="bach" id="br0-Wb-I6B" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Vw-Gu-SEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="3170"/>
+            <point key="canvasLocation" x="-1976" y="2964"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="LBK-dN-JH3">
@@ -1323,6 +1322,9 @@
                                 <real key="value" value="-5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="2VB-9O-ktq" id="gVj-GC-zkt"/>
+                        </connections>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Oo-Ju-3CU">
@@ -1335,6 +1337,16 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5eT-mm-FQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="2VB-9O-ktq" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.93333333330000001" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.93333333330000001" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="-86" y="1569"/>
         </scene>
@@ -1386,6 +1398,9 @@
                                 <real key="value" value="-5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="E6K-Rm-MYc" id="Zal-f5-M0S"/>
+                        </connections>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z5f-Cl-mq0">
@@ -1398,6 +1413,16 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i05-iz-Sj8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="E6K-Rm-MYc" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textSelectedColor">
+                            <color key="value" red="0.93333333330000001" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="iconSelectedColor">
+                            <color key="value" red="0.93333333330000001" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="3113" y="1569"/>
         </scene>

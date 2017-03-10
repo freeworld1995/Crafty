@@ -25,4 +25,10 @@ extension ListProductsViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 12, left: 12, bottom: 0, right: 12)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "bach", bundle: nil).instantiateViewController(withIdentifier: "productVC") as? ProductViewController
+        vc?.product = datasource.products[indexPath.item]
+        self.navigationController?.present(vc!, animated: true, completion: nil)
+    }
 }
