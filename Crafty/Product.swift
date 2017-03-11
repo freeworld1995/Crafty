@@ -20,8 +20,9 @@ class Product: NSObject {
     var timestamp: NSNumber?
     var sellerID: String?
     var images: [String]
-    
-    
+    var userID: String?
+    var peopleWhoLike: [String]? = [String]()
+    var productID: String?
     override init() {
         category = nil
         categoryDetail = nil
@@ -34,6 +35,9 @@ class Product: NSObject {
         timestamp = 0
         sellerID = ""
         images = []
+        userID = ""
+        productID = ""
+        peopleWhoLike = []
     }
     
     func resetAll() {
@@ -48,6 +52,9 @@ class Product: NSObject {
         timestamp = 0
         sellerID = ""
         images = []
+        userID = ""
+        productID = "" 
+        peopleWhoLike = []
     }
     
     func printAll() {

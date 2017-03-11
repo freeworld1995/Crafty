@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import SDWebImage
+import Firebase
 class ProductViewController: UIViewController {
     
     
@@ -17,14 +18,18 @@ class ProductViewController: UIViewController {
     var headerMaskLayer: CAShapeLayer!
     var tableHeaderHeight: CGFloat = 290.0
     var tableHeaderCutAway: CGFloat = 50.0
+    var nf = NumberFormatter()
+    var product333 = [Product]()
+   
     struct StoryBoard{
         static let tableViewCellIdentifier = "cell"
         static let tableViewCellIdentifier1 = "cell1"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+   
         headerView = tableview.tableHeaderView as! ProductViewHeader1
+        headerView.imageBackgroundProduct.sd_setImage(with: URL(string: product.images[0]))
         tableview.tableHeaderView = nil
         tableview.addSubview(headerView)
         tableview.contentInset = UIEdgeInsetsMake(tableHeaderHeight, 0, 0, 0)
@@ -35,6 +40,49 @@ class ProductViewController: UIViewController {
         headerMaskLayer.fillColor = UIColor.black.cgColor
         headerView.layer.mask = headerMaskLayer
         updateHeaderView()
+        fetch()
+    }
+    func fetch()  {
+        
+        let ref = FIRDatabase.database().reference()
+        ref.child("users").queryOrderedByKey().observeSingleEvent(of: .value, with: {
+            snapshot in
+            let users = snapshot.value as! [String: AnyObject]
+            for(_, value) in users {
+                if let uid = value["uid"] as? String{
+                    if uid == FIRAuth.auth()?.currentUser?.uid{
+                    ref.child("products").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
+                            let productSnap = snap.value as! [String: AnyObject]
+                            for (_,product) in productSnap{
+                                if let userID = product["sellerID"] as? String{
+                                    let product1 = Product()
+                                    if let hearts = product["love"] as? Int, let productID = product["productID"] as? String{
+                                        product1.userID = userID
+                                        product1.productID = productID
+                                        product1.love = hearts as NSNumber?
+                                        if let people = product["peopleWhoLike"] as? [String: AnyObject]{
+                                            for (_,person) in people {
+                                                product1.peopleWhoLike?.append(person as! String)
+                                            }
+                                        }
+                                        self.product333.append(product1)
+                                        print("ahihi\(self.product333)")
+                                        
+                                    }
+                                    self.tableview.reloadData()
+                                }
+                            }
+                        })
+                    }
+                }
+            }
+        })
+     
+            
+            
+    ref.removeAllObservers()
+       
+        
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -84,7 +132,12 @@ extension ProductViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: StoryBoard.tableViewCellIdentifier, for: indexPath) as! ProductViewTableViewCell
-            
+            cell.titleLabel.text = product.title
+           
+            cell.priceLabel.text = "$\(nf.string(from: product.price!))"
+            cell.descriptionLabel.text = product.detail
+           // cell.heartLabel.text = "\(self.product333[indexPath.row].love!) ❤️"
+            cell.productID = self.product333[indexPath.row].productID
             cell.sizeToFit()
             return cell
         }else{

@@ -54,8 +54,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
                     // Cho đc vào Storage rồi thì lấy url ảnh để cho tiếp vào Database
                     if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
                         // Info User kiểu Dictionary để cho vào Database
-                        let values = ["name": name, "email": email, "city": city, "profileImageUrl": profileImageUrl]
-                        
+                        let values = ["name": name, "email": email, "city": city, "profileImageUrl": profileImageUrl, "uid": userUId]
                         // Cho name + email + profileImageUrl vào Database
                         self.registerUserIntoDatabase(uid: userUId, values: values)
                     }
