@@ -11,8 +11,7 @@ import Firebase
 
 class AccountDataSource: NSObject, UICollectionViewDataSource {
     var products: [Product] = []
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return products.count
     }

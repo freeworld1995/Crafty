@@ -9,6 +9,7 @@
 import Foundation
 
 class User: NSObject {
+    var accountCategory: [String]?
     var id: String?
     var name: String?
     var email: String?

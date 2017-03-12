@@ -82,6 +82,16 @@ class FirebaseManager: NSObject {
                                 // Complete denormalize
                             })
                             
+                            //                            let feedRef = FIRDatabase.database().reference().child("feeds").child(category).child(sellerID!)
+                            //
+                            //                            feedRef.updateChildValues(values, withCompletionBlock: { (error, ref) in
+                            //                                if error != nil {
+                            //                                    print(error!)
+                            //                                    return
+                            //                                }
+                            //
+                            //                            })
+                            //
                             DispatchQueue.main.async {
                                 completion() // reload tableview at viewController
                             }
@@ -226,12 +236,73 @@ class FirebaseManager: NSObject {
                 let user = User()
                 
                 user.setValuesForKeys(dictionnary)
+                user.id = snapshot.key
                 DispatchQueue.main.async {
                     completion(user)
                 }
             }
         }) { (error) in
             print("Get user error: \(error)")
+        }
+    }
+    
+    static func updateAccountCategory(accountCategory: [String], viewController controller: UIViewController) {
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        print("lozl: \(accountCategory)")
+        
+        let ref = FIRDatabase.database().reference().child("users").child(userID!)
+        
+        //        ref.child("accountCategory").removeValue { (error, ref) in
+        //            if error != nil {
+        //                print("delete accountCategory error: \(error!)")
+        //                return
+        //            }
+        //        }
+        
+        ref.updateChildValues(["accountCategory": accountCategory]) { (error, ref) in
+            if error != nil {
+                print("update accountCategory error: \(error!)")
+                return
+            }
+            
+            let ac = UIAlertController(title: "Successful", message: "save categories successful", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            controller.present(ac, animated: true, completion: nil)
+        }
+        
+    }
+    
+    static func observeFeed(userID: String, viewController controller: UIViewController, completion: @escaping (_ result: Bool, _ productList: [Product]?) -> ()) {
+        
+        guard let userID = FIRAuth.auth()?.currentUser?.uid else { return }
+        
+        var products = [Product]()
+        
+        //        let userRef = FIRDatabase.database().reference().child("users").child(userID)
+        
+        getUser(byID: userID) { (user) in
+            user.accountCategory?.forEach {
+                let productRef = FIRDatabase.database().reference().child("productCategory").child($0)
+                productRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let dictionary = snapshot.value as? [String: AnyObject] {
+                        dictionary.forEach {
+                            let product = Product()
+                            product.setValuesForKeys($0.value as! [String : AnyObject])
+                            
+                            //                    if product.sellerID != uid {
+                            products.append(product)
+                            //                    }
+                        }
+                    }
+                    products.sort(by: { (p1, p2) -> Bool in
+                        return p1.timestamp!.doubleValue > p2.timestamp!.doubleValue
+                    })
+                    completion(true, products)
+                })
+            }
+            
         }
     }
     

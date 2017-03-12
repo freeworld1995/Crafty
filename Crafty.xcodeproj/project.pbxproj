@@ -32,6 +32,15 @@
 		BF3938EB1E6D14B50075B2A5 /* BaseCellWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3938EA1E6D14B50075B2A5 /* BaseCellWithShadow.swift */; };
 		BF6F5DD91E6FFC94005EBAD2 /* SetupNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DD81E6FFC94005EBAD2 /* SetupNavBar.swift */; };
 		BF6F5DDC1E700D5C005EBAD2 /* HADropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DDB1E700D5C005EBAD2 /* HADropDown.swift */; };
+		BF6F5DDF1E7318F0005EBAD2 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DDD1E7318F0005EBAD2 /* FeedCell.swift */; };
+		BF6F5DE01E7318F0005EBAD2 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6F5DDE1E7318F0005EBAD2 /* FeedCell.xib */; };
+		BF6F5DE31E732172005EBAD2 /* AccountCategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DE21E732172005EBAD2 /* AccountCategoryDataSource.swift */; };
+		BF6F5DE61E7322DF005EBAD2 /* AccountCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DE41E7322DF005EBAD2 /* AccountCategoryCell.swift */; };
+		BF6F5DE71E7322DF005EBAD2 /* AccountCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6F5DE51E7322DF005EBAD2 /* AccountCategoryCell.xib */; };
+		BF6F5DEA1E735632005EBAD2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DE91E735632005EBAD2 /* FeedViewController.swift */; };
+		BF6F5DED1E73575A005EBAD2 /* FeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DEC1E73575A005EBAD2 /* FeedDataSource.swift */; };
+		BF6F5DEF1E7358F4005EBAD2 /* FeedDelegate+Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DEE1E7358F4005EBAD2 /* FeedDelegate+Handler.swift */; };
+		BF6F5DF11E7365DE005EBAD2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DF01E7365DE005EBAD2 /* String.swift */; };
 		BF776B0C1E654D9B005D64FE /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF776B0A1E654D9B005D64FE /* LocationTableViewCell.swift */; };
 		BF776B0D1E654D9B005D64FE /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF776B0B1E654D9B005D64FE /* LocationTableViewCell.xib */; };
 		BF776B191E65B3CF005D64FE /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF776B161E65B3CF005D64FE /* NibLoadableView.swift */; };
@@ -140,6 +149,15 @@
 		BF3938EA1E6D14B50075B2A5 /* BaseCellWithShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCellWithShadow.swift; sourceTree = "<group>"; };
 		BF6F5DD81E6FFC94005EBAD2 /* SetupNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupNavBar.swift; sourceTree = "<group>"; };
 		BF6F5DDB1E700D5C005EBAD2 /* HADropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HADropDown.swift; sourceTree = "<group>"; };
+		BF6F5DDD1E7318F0005EBAD2 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		BF6F5DDE1E7318F0005EBAD2 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		BF6F5DE21E732172005EBAD2 /* AccountCategoryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCategoryDataSource.swift; sourceTree = "<group>"; };
+		BF6F5DE41E7322DF005EBAD2 /* AccountCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCategoryCell.swift; sourceTree = "<group>"; };
+		BF6F5DE51E7322DF005EBAD2 /* AccountCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountCategoryCell.xib; sourceTree = "<group>"; };
+		BF6F5DE91E735632005EBAD2 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		BF6F5DEC1E73575A005EBAD2 /* FeedDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDataSource.swift; sourceTree = "<group>"; };
+		BF6F5DEE1E7358F4005EBAD2 /* FeedDelegate+Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedDelegate+Handler.swift"; sourceTree = "<group>"; };
+		BF6F5DF01E7365DE005EBAD2 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BF776B0A1E654D9B005D64FE /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		BF776B0B1E654D9B005D64FE /* LocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		BF776B161E65B3CF005D64FE /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
@@ -341,6 +359,7 @@
 				BF776B171E65B3CF005D64FE /* ReusableView.swift */,
 				BFF295EA1E66685700F0287F /* Core Graphic */,
 				BF6F5DDB1E700D5C005EBAD2 /* HADropDown.swift */,
+				BF6F5DF01E7365DE005EBAD2 /* String.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -377,6 +396,34 @@
 				BF6F5DD81E6FFC94005EBAD2 /* SetupNavBar.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		BF6F5DE11E7318F5005EBAD2 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F5DDD1E7318F0005EBAD2 /* FeedCell.swift */,
+				BF6F5DDE1E7318F0005EBAD2 /* FeedCell.xib */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		BF6F5DE81E7322F6005EBAD2 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F5DE41E7322DF005EBAD2 /* AccountCategoryCell.swift */,
+				BF6F5DE51E7322DF005EBAD2 /* AccountCategoryCell.xib */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
+		BF6F5DEB1E735740005EBAD2 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				BF6F5DE91E735632005EBAD2 /* FeedViewController.swift */,
+				BF6F5DEC1E73575A005EBAD2 /* FeedDataSource.swift */,
+				BF6F5DEE1E7358F4005EBAD2 /* FeedDelegate+Handler.swift */,
+			);
+			name = Feed;
 			sourceTree = "<group>";
 		};
 		BF776B0E1E654D9F005D64FE /* InsideDelivery */ = {
@@ -637,6 +684,7 @@
 				BF130FBF1E58185600461C6D /* BaseViewController.swift */,
 				BFF296301E684CD100F0287F /* Account */,
 				BFF2963F1E68659B00F0287F /* List Products */,
+				BF6F5DEB1E735740005EBAD2 /* Feed */,
 			);
 			name = "Controller+Datasource";
 			sourceTree = "<group>";
@@ -661,6 +709,8 @@
 				BF3938E41E6C17990075B2A5 /* DemoCell.swift */,
 				BF3938E51E6C17990075B2A5 /* DemoCell.xib */,
 				BF3938EA1E6D14B50075B2A5 /* BaseCellWithShadow.swift */,
+				BF6F5DE11E7318F5005EBAD2 /* Feed */,
+				BF6F5DE81E7322F6005EBAD2 /* Account */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -735,6 +785,7 @@
 				BFF2962E1E684CCA00F0287F /* AccountViewController.swift */,
 				BFF296311E684CE200F0287F /* AccountDataSource.swift */,
 				BFF296391E685A4700F0287F /* AccountController+Handler.swift */,
+				BF6F5DE21E732172005EBAD2 /* AccountCategoryDataSource.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -824,7 +875,9 @@
 				BFF2962D1E67D11700F0287F /* ProductCell.xib in Resources */,
 				BF7DA6B51E41C4C50064C000 /* Lato-Bold.ttf in Resources */,
 				BF304B121E5720CA0069E36D /* CategoryTableViewCell.xib in Resources */,
+				BF6F5DE01E7318F0005EBAD2 /* FeedCell.xib in Resources */,
 				BF7DA6BD1E41C4C50064C000 /* Lato-LightItalic.ttf in Resources */,
+				BF6F5DE71E7322DF005EBAD2 /* AccountCategoryCell.xib in Resources */,
 				BF7E1BF11E4E0E4800390BF3 /* bach.storyboard in Resources */,
 				BF304B391E575B550069E36D /* ItemTableViewCell.xib in Resources */,
 				BF7DA67D1E41C0EC0064C000 /* LaunchScreen.storyboard in Resources */,
@@ -941,6 +994,8 @@
 				BF6F5DDC1E700D5C005EBAD2 /* HADropDown.swift in Sources */,
 				BF304B401E576F500069E36D /* DeliveryTableViewCell.swift in Sources */,
 				BF3938EB1E6D14B50075B2A5 /* BaseCellWithShadow.swift in Sources */,
+				BF6F5DEA1E735632005EBAD2 /* FeedViewController.swift in Sources */,
+				BF6F5DE31E732172005EBAD2 /* AccountCategoryDataSource.swift in Sources */,
 				BF86D5B71E4B091C00C4F492 /* CategoryDetailCollectionView.swift in Sources */,
 				BF86D5B41E4B041500C4F492 /* CategoryContainerCell.swift in Sources */,
 				BF304B3C1E575CD00069E36D /* PriceTableViewCell.swift in Sources */,
@@ -948,8 +1003,13 @@
 				BF7DA6CF1E420BEE0064C000 /* RegisterViewController.swift in Sources */,
 				BFF295E91E66683700F0287F /* CGPoint.swift in Sources */,
 				BFF296411E6865BA00F0287F /* ListProductsDataSource.swift in Sources */,
+				BF6F5DEF1E7358F4005EBAD2 /* FeedDelegate+Handler.swift in Sources */,
+				BF6F5DF11E7365DE005EBAD2 /* String.swift in Sources */,
+				BF6F5DDF1E7318F0005EBAD2 /* FeedCell.swift in Sources */,
 				BF2AC7111E4497A700F92281 /* Product.swift in Sources */,
 				BF7DA6C61E41C71D0064C000 /* UIView.swift in Sources */,
+				BF6F5DED1E73575A005EBAD2 /* FeedDataSource.swift in Sources */,
+				BF6F5DE61E7322DF005EBAD2 /* AccountCategoryCell.swift in Sources */,
 				BFDB2C561E4393730098A0AE /* RegisterController+Handler.swift in Sources */,
 				BFF296191E66E4F100F0287F /* PagingViewController.swift in Sources */,
 				BF9E28901E48574F00A23E55 /* CategoryDataSource.swift in Sources */,
