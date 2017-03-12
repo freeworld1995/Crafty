@@ -44,6 +44,27 @@ class ListProductsViewController: UIViewController, SetupNavBar, HADropDownDeleg
             }
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(handleProductVC), name: Notification.Name(rawValue: "productVC"), object: nil)
+        
+    }
+    
+    func handleProductVC(notification: Notification) {
+        if let result = notification.userInfo?["result"] as? Bool {
+            if result {
+                FirebaseManager.observeProductByCategory(category: category!, viewController: self) { (condition, result) in
+                    if condition {
+                        self.datasource.products = result!
+                        self.collectionView.reloadData()
+                        self.indicator.stopAnimating()
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    deinit {
+        print("ListProduct deinit")
     }
     
     func didSelectItem(dropDown: HADropDown, at index: Int) {

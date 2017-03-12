@@ -10,8 +10,6 @@ import UIKit
 
 class ProductViewHeader1: UIView {
     func updateUI()  {
-       
-     
         imageBackgroundClient.layer.cornerRadius = 10
         imageBackgroundClient.layer.masksToBounds = true
     }

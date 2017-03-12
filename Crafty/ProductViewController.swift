@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import Firebase
+
 class ProductViewController: UIViewController {
     
     
@@ -19,15 +20,15 @@ class ProductViewController: UIViewController {
     var tableHeaderHeight: CGFloat = 290.0
     var tableHeaderCutAway: CGFloat = 50.0
     var nf = NumberFormatter()
-    var product333 = [Product]()
-   
+    var pagingViewController: PagingViewController?
+    
     struct StoryBoard{
         static let tableViewCellIdentifier = "cell"
         static let tableViewCellIdentifier1 = "cell1"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+        
         headerView = tableview.tableHeaderView as! ProductViewHeader1
         headerView.imageBackgroundProduct.sd_setImage(with: URL(string: product.images[0]))
         tableview.tableHeaderView = nil
@@ -42,7 +43,7 @@ class ProductViewController: UIViewController {
         updateHeaderView()
         
     }
-       override func viewWillLayoutSubviews() {
+    override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         updateHeaderView()
     }
@@ -64,11 +65,16 @@ class ProductViewController: UIViewController {
         path.addLine(to: CGPoint(x: 0, y: headerRect.height - tableHeaderCutAway))
         headerMaskLayer?.path = path.cgPath
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    deinit {
+        print("productVC deinit")
+
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "productVC"), object: nil, userInfo: ["result": true])
+        
     }
+    
 }
+
 extension ProductViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -91,11 +97,20 @@ extension ProductViewController: UITableViewDataSource{
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: StoryBoard.tableViewCellIdentifier, for: indexPath) as! ProductViewTableViewCell
             cell.titleLabel.text = product.title
-           
-            cell.priceLabel.text = "$\(nf.string(from: product.price!))"
+            
+            cell.priceLabel.text = "\(nf.string(from: product.price!)!) VND"
             cell.descriptionLabel.text = product.detail
             cell.heartLabel.text = "\(self.product.love!) ❤️"
             cell.productID = self.product.productID
+            
+            product.peopleWhoLike?.forEach {
+                if $0 == FIRAuth.auth()?.currentUser?.uid {
+                    //                    cell.btnHeart.imageColorOff = UIColor.red
+                    //                    cell.btnHeart.imageColorOn = UIColor.gray
+                    cell.btnHeart.isSelected = true
+                }
+            }
+            
             cell.sizeToFit()
             return cell
         }else{
