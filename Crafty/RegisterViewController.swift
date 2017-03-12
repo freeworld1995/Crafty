@@ -31,8 +31,12 @@ class RegisterViewController: UIViewController {
     
     let locationMamager = LocationManager()
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        indicator.isHidden = true
         
         scrollView.isScrollEnabled = true
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: 1000)

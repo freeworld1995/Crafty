@@ -11,11 +11,11 @@ import DOFavoriteButton
 import Firebase
 class ProductViewTableViewCell: UITableViewCell {
     @IBOutlet weak var btnLike: DOFavoriteButton!
-
+    
     @IBOutlet weak var btnSmile: DOFavoriteButton!
     @IBOutlet weak var btnStar: DOFavoriteButton!
     @IBOutlet weak var btnHeart: DOFavoriteButton!
- //   @IBOutlet var heartBtn: DOFavoriteButton!
+    //   @IBOutlet var heartBtn: DOFavoriteButton!
     
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var heartLabel: UILabel!
@@ -28,7 +28,7 @@ class ProductViewTableViewCell: UITableViewCell {
     var productID: String!
     override func awakeFromNib() {
         super.awakeFromNib()
-       
+        
         btnHeart.imageColorOn = UIColor(red: 254/255, green: 110/255, blue: 111/255, alpha: 1.0)
         btnHeart.circleColor = UIColor(red: 254/255, green: 110/255, blue: 111/255, alpha: 1.0)
         btnHeart.lineColor = UIColor(red: 226/255, green: 96/255, blue: 96/255, alpha: 1.0)
@@ -53,38 +53,115 @@ class ProductViewTableViewCell: UITableViewCell {
     func HeartTapped(sender: DOFavoriteButton) {
         if sender.isSelected {
             self.heartLabel.text = "  "
+            let ref = FIRDatabase.database().reference()
+            ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let properties = snapshot.value as? [String: AnyObject]{
+                    if let peopleWhoLike = properties ["peopleWhoLike"] as? [String: AnyObject]{
+                        for (id, person) in peopleWhoLike {
+                            if person as? String == FIRAuth.auth()!.currentUser!.uid{
+                                ref.child("products").child(self.productID).child("peopleWhoLike").child(id).removeValue(completionBlock: { (error, reff) in
+                                    if error == nil {
+                                        ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snap) in
+                                            if let prop = snap.value as? [String: AnyObject]{
+                                                if let hearts = prop["peopleWhoLike"] as? [String: AnyObject]{
+                                                    let count = hearts.count
+                                                    
+                                                    self.heartLabel.text = "\(count) ♥️"
+                                                    ref.child("products").child(self.productID).updateChildValues(["love": count])
+                                                }else{
+                                                    self.heartLabel.text = "   "
+                                                    ref.child("products").child(self.productID).updateChildValues(["love": 0])
+                                                }
+                                                
+                                            }
+                                        })
+                                    }
+                                })
+                                // sender.deselect()
+                                break
+                            }
+                        }
+                    }
+                }
+            })
+            ref.removeAllObservers()
             sender.deselect()
         } else {
-           self.heartLabel.text = "1 ❤️"
+            //self.heartLabel.text = "1 ❤️"
             let ref = FIRDatabase.database().reference()
             let keyToPost = ref.child("products").childByAutoId().key
             ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let product = snapshot.value as? [String: AnyObject]{
-                    let updateHearts: [String:Any] = ["peopleWhoLike/\(keyToPost)": FIRAuth.auth()!.currentUser!.uid]
-                    ref.child("products").child(self.productID).updateChildValues(updateHearts, withCompletionBlock: { (error, reff) in
-                        if error == nil{
-                            ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snap) in
-                                if let properties = snap.value as? [String: AnyObject]{
-                                    if let hearts = properties["peopleWhoLike"] as? [String : AnyObject]{
-                                        let count = hearts.count
-                                        if count == 1 {
-                                            self.heartLabel.text = "\(count) ❤️"
-                                        }else{
-                                            self.heartLabel.text = "\(count) 💕"
+                    //                    let updateHearts: [String:Any] = ["peopleWhoLike/\(keyToPost)": FIRAuth.auth()!.currentUser!.uid]
+                    
+                    if snapshot.hasChild("peopleWhoLike") {
+                        
+                        ref.child("products").child(self.productID).child("peopleWhoLike").observeSingleEvent(of: .value, with: { (snap) in
+                            
+                            
+                            var arrayPeopleLike = [String]()
+                            let userID = FIRAuth.auth()?.currentUser?.uid
+                            
+                            if let array = snap.value as? [String] {
+                                array.forEach {
+                                    arrayPeopleLike.append($0)
+                                }
+                            }
+                            
+                            arrayPeopleLike.append(userID!)
+                            
+                            ref.child("products").child(self.productID).updateChildValues(["peopleWhoLike": arrayPeopleLike], withCompletionBlock: { (error, reff) in
+                                if error == nil{
+                                    ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snap) in
+                                        if let properties = snap.value as? [String: AnyObject]{
+                                            if let hearts = properties["peopleWhoLike"] as? [String : AnyObject]{
+                                                let count = hearts.count
+                                                if count == 1 {
+                                                    self.heartLabel.text = "\(count) ❤️"
+                                                }else{
+                                                    self.heartLabel.text = "\(count) 💕"
+                                                }
+                                                let update = ["love":count]
+                                                ref.child("products").child(self.productID).updateChildValues(update)
+                                                sender.select()
+                                                
+                                            }
                                         }
-                                        let update = ["love":count]
-                                        ref.child("products").child(self.productID).updateChildValues(update)
-                                        
-                                    }
+                                    })
                                 }
                             })
-                        }
-                    })
+                        })
+                    } else {
+                        var array = [String]()
+                        let userID = FIRAuth.auth()?.currentUser?.uid
+                        array.append(userID!)
+                        
+                        ref.child("products").child(self.productID).updateChildValues(["peopleWhoLike": array], withCompletionBlock: { (error, reff) in
+                            if error == nil{
+                                ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snap) in
+                                    if let properties = snap.value as? [String: AnyObject]{
+                                        if let hearts = properties["peopleWhoLike"] as? [String : AnyObject]{
+                                            let count = hearts.count
+                                            if count == 1 {
+                                                self.heartLabel.text = "\(count) ❤️"
+                                            }else{
+                                                self.heartLabel.text = "\(count) 💕"
+                                            }
+                                            let update = ["love":count]
+                                            ref.child("products").child(self.productID).updateChildValues(update)
+                                            sender.select()
+                                            
+                                        }
+                                    }
+                                })
+                            }
+                        })
+                    }
                 }
                 
             })
             ref.removeAllObservers()
-            sender.select()
+            //sender.select()
         }
     }
     func LikeTapped(sender: DOFavoriteButton) {
@@ -120,11 +197,11 @@ class ProductViewTableViewCell: UITableViewCell {
         }
     }
     
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

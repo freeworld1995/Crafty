@@ -23,6 +23,7 @@ class Product: NSObject {
     var userID: String?
     var peopleWhoLike: [String]? = [String]()
     var productID: String?
+    
     override init() {
         category = nil
         categoryDetail = nil
