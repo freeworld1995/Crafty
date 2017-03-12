@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension ListProductsViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -29,6 +30,90 @@ extension ListProductsViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UIStoryboard(name: "bach", bundle: nil).instantiateViewController(withIdentifier: "productVC") as? ProductViewController
         vc?.product = datasource.products[indexPath.item]
-        self.navigationController?.present(vc!, animated: true, completion: nil)
+        self.pagingViewController?.present(vc!, animated: true, completion: nil)
     }
 }
+
+//MARK: Handler
+
+extension ListProductsViewController {
+    func likeCategory() {
+        
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        let ref = FIRDatabase.database().reference().child("users").child(userID!)
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.hasChild("accountCategory") {
+                
+                
+                ref.child("accountCategory").observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    var categoryArray = [String]()
+                    print(snapshot.value)
+                    if let array = snapshot.value as? [String] {
+                        array.forEach {
+                            categoryArray.append($0)
+                        }
+                    }
+                    
+                    categoryArray.append(self.category!)
+                    
+                    ref.updateChildValues(["accountCategory" : categoryArray], withCompletionBlock: { (error, ref) in
+                        if error != nil {
+                            print(error!)
+                            return
+                        }
+                        // complete
+                        
+                        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Unlike", style: .plain, target: self, action: #selector(self.unlikeCategory))
+                    })
+                    
+                })
+                
+            } else {
+                
+                var categoryArray = [String]()
+                categoryArray.append(self.category!)
+                ref.updateChildValues(["accountCategory" : categoryArray], withCompletionBlock: { (error, ref) in
+                    if error != nil {
+                        print(error!)
+                        return
+                    }
+                    //complete
+                    
+                    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Unlike", style: .plain, target: self, action: #selector(self.unlikeCategory))
+                })
+            }
+        })
+        
+    }
+    
+    func unlikeCategory() {
+        
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        let ref = FIRDatabase.database().reference().child("users").child(userID!)
+        
+        ref.child("accountCategory").observeSingleEvent(of: .value, with: { (snapshot) in
+            if var categoryArray = snapshot.value as? [String] {
+                for (index, item) in categoryArray.enumerated() {
+                    if item == self.category! {
+                        categoryArray.remove(at: index)
+                    }
+                }
+                
+                ref.updateChildValues(["accountCategory" : categoryArray], withCompletionBlock: { (error, ref) in
+                    if error != nil {
+                        print(error!)
+                        return
+                    }
+                    // complete
+                    
+                    self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Like", style: .plain, target: self, action: #selector(self.likeCategory))
+                })
+            }
+        })
+    }
+}
+

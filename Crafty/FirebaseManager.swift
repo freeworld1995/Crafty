@@ -52,9 +52,11 @@ class FirebaseManager: NSObject {
                         let sellerID = FIRAuth.auth()?.currentUser?.uid
                         let ref = FIRDatabase.database().reference().child("products")
                         let timestamp = NSNumber(value: Int(Date().timeIntervalSince1970))
-                        let values: [String: AnyObject] = ["category": category as AnyObject, "categoryDetail": categoryDetail as AnyObject, "title": title as AnyObject, "detail": detail as AnyObject, "price": price as AnyObject, "images": productImagesURL as AnyObject, "locationName": locationName as AnyObject, "locationAddress": locationAddress as AnyObject, "timestamp": timestamp, "love": love as AnyObject, "sellerID": sellerID as AnyObject, "peopleWhoLike": peopleWhoLike as AnyObject, "productID": productID as AnyObject]
                         
                         let childRef = ref.childByAutoId()
+                        let values: [String: AnyObject] = ["category": category as AnyObject, "categoryDetail": categoryDetail as AnyObject, "title": title as AnyObject, "detail": detail as AnyObject, "price": price as AnyObject, "images": productImagesURL as AnyObject, "locationName": locationName as AnyObject, "locationAddress": locationAddress as AnyObject, "timestamp": timestamp, "love": love as AnyObject, "sellerID": sellerID as AnyObject, "peopleWhoLike": peopleWhoLike as AnyObject, "productID": childRef.key as AnyObject]
+                        
+                        
                         
                         childRef.updateChildValues(values) { (error, ref) in
                             if error != nil {
@@ -285,7 +287,8 @@ class FirebaseManager: NSObject {
         getUser(byID: userID) { (user) in
             user.accountCategory?.forEach {
                 let productRef = FIRDatabase.database().reference().child("productCategory").child($0)
-                productRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                productRef.observe(.value, with: { (snapshot) in
                     if let dictionary = snapshot.value as? [String: AnyObject] {
                         dictionary.forEach {
                             let product = Product()
@@ -300,9 +303,53 @@ class FirebaseManager: NSObject {
                         return p1.timestamp!.doubleValue > p2.timestamp!.doubleValue
                     })
                     completion(true, products)
+                    
+                    
                 })
+                
+                //                productRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                //                    if let dictionary = snapshot.value as? [String: AnyObject] {
+                //                        dictionary.forEach {
+                //                            let product = Product()
+                //                            product.setValuesForKeys($0.value as! [String : AnyObject])
+                //
+                //                            //                    if product.sellerID != uid {
+                //                            products.append(product)
+                //                            //                    }
+                //                        }
+                //                    }
+                //                    products.sort(by: { (p1, p2) -> Bool in
+                //                        return p1.timestamp!.doubleValue > p2.timestamp!.doubleValue
+                //                    })
+                //                    completion(true, products)
+                //                })
             }
             
+        }
+    }
+    
+    static func checkAccountCategory(category: String, completion: @escaping (Bool) -> ()) {
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        let ref = FIRDatabase.database().reference().child("users").child(userID!).child("accountCategory")
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            var result = false
+            
+            if let array = snapshot.value as? [String] {
+                array.forEach {
+                    if $0 == category {
+                        result = true
+                        
+                        return
+                    }
+                }
+            }
+            
+            completion(result)
+            
+        }) { (error) in
+            print("error checking account cateogry: \(error)")
         }
     }
     

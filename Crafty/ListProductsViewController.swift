@@ -13,8 +13,9 @@ class ListProductsViewController: UIViewController, SetupNavBar, HADropDownDeleg
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var dropDownList: HADropDown!
-
+    
     let datasource = ListProductsDataSource()
+    var pagingViewController: PagingViewController?
     var category: String?
     
     override func viewDidLoad() {
@@ -32,6 +33,14 @@ class ListProductsViewController: UIViewController, SetupNavBar, HADropDownDeleg
                 self.datasource.products = result!
                 self.collectionView.reloadData()
                 self.indicator.stopAnimating()
+            }
+        }
+        
+        FirebaseManager.checkAccountCategory(category: category!) { (result) in
+            if result {
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Unlike", style: .plain, target: self, action: #selector(self.unlikeCategory))
+            } else {
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Like", style: .plain, target: self, action: #selector(self.likeCategory))
             }
         }
         
