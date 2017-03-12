@@ -8,6 +8,7 @@
 
 import UIKit
 import DOFavoriteButton
+import Firebase
 class ProductViewTableViewCell: UITableViewCell {
     @IBOutlet weak var btnLike: DOFavoriteButton!
 
@@ -20,7 +21,11 @@ class ProductViewTableViewCell: UITableViewCell {
     @IBOutlet weak var heartLabel: UILabel!
     @IBOutlet weak var starLabel: UILabel!
     @IBOutlet weak var smileLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
+    var productID: String!
     override func awakeFromNib() {
         super.awakeFromNib()
        
@@ -47,12 +52,38 @@ class ProductViewTableViewCell: UITableViewCell {
     }
     func HeartTapped(sender: DOFavoriteButton) {
         if sender.isSelected {
-            
             self.heartLabel.text = "  "
             sender.deselect()
         } else {
            self.heartLabel.text = "1 ❤️"
-            
+            let ref = FIRDatabase.database().reference()
+            let keyToPost = ref.child("products").childByAutoId().key
+            ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let product = snapshot.value as? [String: AnyObject]{
+                    let updateHearts: [String:Any] = ["peopleWhoLike/\(keyToPost)": FIRAuth.auth()!.currentUser!.uid]
+                    ref.child("products").child(self.productID).updateChildValues(updateHearts, withCompletionBlock: { (error, reff) in
+                        if error == nil{
+                            ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snap) in
+                                if let properties = snap.value as? [String: AnyObject]{
+                                    if let hearts = properties["peopleWhoLike"] as? [String : AnyObject]{
+                                        let count = hearts.count
+                                        if count == 1 {
+                                            self.heartLabel.text = "\(count) ❤️"
+                                        }else{
+                                            self.heartLabel.text = "\(count) 💕"
+                                        }
+                                        let update = ["love":count]
+                                        ref.child("products").child(self.productID).updateChildValues(update)
+                                        
+                                    }
+                                }
+                            })
+                        }
+                    })
+                }
+                
+            })
+            ref.removeAllObservers()
             sender.select()
         }
     }
