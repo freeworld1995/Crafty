@@ -59,7 +59,7 @@ class ProductViewTableViewCell: UITableViewCell {
             let ref = FIRDatabase.database().reference()
             let keyToPost = ref.child("products").childByAutoId().key
             ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snapshot) in
-                if let product = snapshot.value as? [String: AnyObject]{
+                if let product = snapshot.value as? [String: AnyObject] {
                     let updateHearts: [String:Any] = ["peopleWhoLike/\(keyToPost)": FIRAuth.auth()!.currentUser!.uid]
                     ref.child("products").child(self.productID).updateChildValues(updateHearts, withCompletionBlock: { (error, reff) in
                         if error == nil{

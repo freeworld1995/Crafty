@@ -54,6 +54,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func goToListProductVC(category: String) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "productVC") as! ListProductsViewController
+        vc.pagingViewController = pagingViewController
         vc.category = category
         pagingViewController!.navigationController?.pushViewController(vc, animated: true)
     }

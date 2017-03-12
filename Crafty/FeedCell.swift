@@ -15,7 +15,6 @@ class FeedCell: UICollectionViewCell {
     @IBOutlet weak var feedTime: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

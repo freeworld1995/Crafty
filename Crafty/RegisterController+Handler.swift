@@ -20,14 +20,19 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func handleLogin() {
         guard let email = emailTxt.text, let password = passwordTxt.text else { return }
+        indicator.isHidden = false
+        indicator.startAnimating()
         
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+            self.indicator.stopAnimating()
             self.dismiss(animated: true)
         })
     }
     
     func handleRegister() {
         guard let name = nameTxt.text, let email = emailTxt.text, let password = passwordTxt.text, let city = city else { return }
+        
+        indicator.startAnimating()
         
         // Tạo user - cần email, password
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
@@ -80,6 +85,8 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
             let user = User()
             // Set keys - values tương ứng với class User để lưu user trong máy
             user.setValuesForKeys(values)
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = true
             
             self.dismiss(animated: true)
         }
