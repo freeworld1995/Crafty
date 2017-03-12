@@ -31,6 +31,9 @@ class ProductViewController: UIViewController {
         
         headerView = tableview.tableHeaderView as! ProductViewHeader1
         headerView.imageBackgroundProduct.sd_setImage(with: URL(string: product.images[0]))
+        headerView.imageBackgroundClient.image = UIImage(named: "elon")
+        headerView.imageBackgroundClient.layer.cornerRadius = 15
+        headerView.imageBackgroundClient.layer.masksToBounds = true
         tableview.tableHeaderView = nil
         tableview.addSubview(headerView)
         tableview.contentInset = UIEdgeInsetsMake(tableHeaderHeight, 0, 0, 0)
@@ -83,7 +86,7 @@ extension ProductViewController: UITableViewDataSource{
         if section == 0 {
             return section
         }else{
-            return 100
+            return 2
         }
     }
     private func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
@@ -114,7 +117,7 @@ extension ProductViewController: UITableViewDataSource{
             cell.sizeToFit()
             return cell
         }else{
-            let cell1 = tableView.dequeueReusableCell(withIdentifier: StoryBoard.tableViewCellIdentifier1, for: indexPath) as UITableViewCell
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: StoryBoard.tableViewCellIdentifier1, for: indexPath) as! ProductCommentTableViewCell
             return cell1
         }
         

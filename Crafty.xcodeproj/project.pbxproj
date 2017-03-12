@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		693C41551E75C27E00252C68 /* ProductCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693C41541E75C27E00252C68 /* ProductCommentTableViewCell.swift */; };
 		6941264E1E72DF8C005312DE /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6941264B1E72DF8C005312DE /* ProductViewController.swift */; };
 		6941264F1E72DF8C005312DE /* ProductViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6941264C1E72DF8C005312DE /* ProductViewHeader.swift */; };
 		694126501E72DF8C005312DE /* ProductViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6941264D1E72DF8C005312DE /* ProductViewTableViewCell.swift */; };
@@ -124,6 +125,7 @@
 
 /* Begin PBXFileReference section */
 		55931AD3D250B89004A8E50B /* Pods-Crafty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crafty.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crafty/Pods-Crafty.release.xcconfig"; sourceTree = "<group>"; };
+		693C41541E75C27E00252C68 /* ProductCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCommentTableViewCell.swift; sourceTree = "<group>"; };
 		6941264B1E72DF8C005312DE /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		6941264C1E72DF8C005312DE /* ProductViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewHeader.swift; sourceTree = "<group>"; };
 		6941264D1E72DF8C005312DE /* ProductViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				6941264B1E72DF8C005312DE /* ProductViewController.swift */,
 				6941264C1E72DF8C005312DE /* ProductViewHeader.swift */,
 				6941264D1E72DF8C005312DE /* ProductViewTableViewCell.swift */,
+				693C41541E75C27E00252C68 /* ProductCommentTableViewCell.swift */,
 			);
 			name = ProductView;
 			sourceTree = "<group>";
@@ -1027,6 +1030,7 @@
 				BFF2963A1E685A4700F0287F /* AccountController+Handler.swift in Sources */,
 				BF304B0E1E56BF910069E36D /* UINavigationBar.swift in Sources */,
 				BF304B111E5720CA0069E36D /* CategoryTableViewCell.swift in Sources */,
+				693C41551E75C27E00252C68 /* ProductCommentTableViewCell.swift in Sources */,
 				BFF296281E66F78A00F0287F /* SectionLabelCell.swift in Sources */,
 				BF776B1B1E65B3CF005D64FE /* UITableView.swift in Sources */,
 				BF776B1D1E65B857005D64FE /* UICollectionView.swift in Sources */,
