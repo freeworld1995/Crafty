@@ -54,35 +54,44 @@ class ProductViewTableViewCell: UITableViewCell {
         if sender.isSelected {
             self.heartLabel.text = "  "
             let ref = FIRDatabase.database().reference()
+            let userID = FIRAuth.auth()!.currentUser!.uid
+            
             ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let properties = snapshot.value as? [String: AnyObject]{
-                    if let peopleWhoLike = properties ["peopleWhoLike"] as? [String: AnyObject]{
-                        for (id, person) in peopleWhoLike {
-                            if person as? String == FIRAuth.auth()!.currentUser!.uid{
-                                ref.child("products").child(self.productID).child("peopleWhoLike").child(id).removeValue(completionBlock: { (error, reff) in
-                                    if error == nil {
-                                        ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snap) in
-                                            if let prop = snap.value as? [String: AnyObject]{
-                                                if let hearts = prop["peopleWhoLike"] as? [String: AnyObject]{
-                                                    let count = hearts.count
-                                                    
-                                                    self.heartLabel.text = "\(count) ♥️"
-                                                    ref.child("products").child(self.productID).updateChildValues(["love": count])
-                                                }else{
-                                                    self.heartLabel.text = "   "
-                                                    ref.child("products").child(self.productID).updateChildValues(["love": 0])
-                                                }
-                                                
-                                            }
-                                        })
+                    if var peopleWhoLike = properties ["peopleWhoLike"] as? [String]{
+                        for (index, person) in peopleWhoLike.enumerated() {
+                            
+                            if person == userID {
+                                peopleWhoLike.remove(at: index)
+                            }
+                            
+                            ref.child("products").child(self.productID).updateChildValues(["peopleWhoLike" : peopleWhoLike], withCompletionBlock: { (error, ref) in
+                                
+                                if error != nil {
+                                    print(error)
+                                    return
+                                }
+                                
+                                ref.child("products").child(self.productID).observeSingleEvent(of: .value, with: { (snap) in
+                                    if let prop = snap.value as? [String: AnyObject]{
+                                        if let hearts = prop["peopleWhoLike"] as? [String: AnyObject]{
+                                            let count = hearts.count
+                                            
+                                            self.heartLabel.text = "\(count) ♥️"
+                                            ref.child("products").child(self.productID).updateChildValues(["love": count])
+                                        }else{
+                                            self.heartLabel.text = "   "
+                                            ref.child("products").child(self.productID).updateChildValues(["love": 0])
+                                        }
+                                        
                                     }
                                 })
+                            })
                                 // sender.deselect()
                                 break
                             }
                         }
                     }
-                }
             })
             ref.removeAllObservers()
             sender.deselect()
