@@ -47,7 +47,7 @@ class FirebaseManager: NSObject {
                         
                         // Start inserting product's info into Database
                         
-                        guard let category = product.category, let categoryDetail = product.categoryDetail, let title = product.title, let detail = product.detail, let price = product.price, let locationName = product.locationName, let locationAddress = product.locationAddress, let peopleWhoLike = product.peopleWhoLike, let productID = product.productID, let love = 0 as? NSNumber else { return }
+                        guard let category = product.category, let categoryDetail = product.categoryDetail, let title = product.title, let detail = product.detail, let price = product.price, let locationName = product.locationName, let locationAddress = product.locationAddress, let peopleWhoLike = product.peopleWhoLike, let love = 0 as? NSNumber else { return }
                         
                         let sellerID = FIRAuth.auth()?.currentUser?.uid
                         let ref = FIRDatabase.database().reference().child("products")
@@ -84,16 +84,6 @@ class FirebaseManager: NSObject {
                                 // Complete denormalize
                             })
                             
-                            //                            let feedRef = FIRDatabase.database().reference().child("feeds").child(category).child(sellerID!)
-                            //
-                            //                            feedRef.updateChildValues(values, withCompletionBlock: { (error, ref) in
-                            //                                if error != nil {
-                            //                                    print(error!)
-                            //                                    return
-                            //                                }
-                            //
-                            //                            })
-                            //
                             DispatchQueue.main.async {
                                 completion() // reload tableview at viewController
                             }
@@ -109,23 +99,21 @@ class FirebaseManager: NSObject {
         }
     }
     
-    static func observeProductByCategory(category: String, viewController controller: UIViewController, completion: @escaping (_ result: Bool, _ productList: [Product]?) -> ()){
-        guard FIRAuth.auth()?.currentUser?.uid != nil else { return }
+    static func observeProductByCategory(category: String, viewController controller: UIViewController, completion: @escaping (_ result: Bool, _ productList: [Product]?) -> ()) {
+        guard let userID = FIRAuth.auth()?.currentUser?.uid else { return }
         
         var products = [Product]()
         
         let ref = FIRDatabase.database().reference().child("products").queryOrdered(byChild: "category").queryEqual(toValue: "\(category)")
-        
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 dictionary.forEach {
                     let product = Product()
                     product.setValuesForKeys($0.value as! [String : AnyObject])
-                    //                    print(product.printAll())
-                    //                    if product.sellerID != uid {
-                    products.append(product)
-                    //                    }
+                    if product.sellerID != userID {
+                        products.append(product)
+                    }
                 }
                 
                 DispatchQueue.main.async {
@@ -246,33 +234,24 @@ class FirebaseManager: NSObject {
         }) { (error) in
             print("Get user error: \(error)")
         }
+        
     }
     
-    static func updateAccountCategory(accountCategory: [String], viewController controller: UIViewController) {
-        let userID = FIRAuth.auth()?.currentUser?.uid
+    static func observeUser(byID userID : String, name: UILabel, city: UILabel, email: UILabel) {
+        let userRef = FIRDatabase.database().reference().child("users").child(userID)
         
-        print("lozl: \(accountCategory)")
         
-        let ref = FIRDatabase.database().reference().child("users").child(userID!)
-        
-        //        ref.child("accountCategory").removeValue { (error, ref) in
-        //            if error != nil {
-        //                print("delete accountCategory error: \(error!)")
-        //                return
-        //            }
-        //        }
-        
-        ref.updateChildValues(["accountCategory": accountCategory]) { (error, ref) in
-            if error != nil {
-                print("update accountCategory error: \(error!)")
-                return
+        userRef.observe(.value, with: { (snapshot) in
+            if let dictionnary = snapshot.value as? [String: AnyObject] {
+                let user = User()
+                
+                user.setValuesForKeys(dictionnary)
+                user.id = snapshot.key
+                name.text =  user.name
+                city.text = user.city
+                email.text = user.email
             }
-            
-            let ac = UIAlertController(title: "Successful", message: "save categories successful", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            
-            controller.present(ac, animated: true, completion: nil)
-        }
+        })
         
     }
     
@@ -282,47 +261,26 @@ class FirebaseManager: NSObject {
         
         var products = [Product]()
         
-        //        let userRef = FIRDatabase.database().reference().child("users").child(userID)
-        
         getUser(byID: userID) { (user) in
             user.accountCategory?.forEach {
                 let productRef = FIRDatabase.database().reference().child("productCategory").child($0)
                 
-                productRef.observe(.value, with: { (snapshot) in
+                productRef.observeSingleEvent(of: .value, with: { (snapshot) in
                     if let dictionary = snapshot.value as? [String: AnyObject] {
                         dictionary.forEach {
                             let product = Product()
                             product.setValuesForKeys($0.value as! [String : AnyObject])
                             
-                            //                    if product.sellerID != uid {
-                            products.append(product)
-                            //                    }
+                            if product.sellerID != userID {
+                                products.append(product)
+                            }
                         }
                     }
                     products.sort(by: { (p1, p2) -> Bool in
                         return p1.timestamp!.doubleValue > p2.timestamp!.doubleValue
                     })
                     completion(true, products)
-                    
-                    
                 })
-                
-                //                productRef.observeSingleEvent(of: .value, with: { (snapshot) in
-                //                    if let dictionary = snapshot.value as? [String: AnyObject] {
-                //                        dictionary.forEach {
-                //                            let product = Product()
-                //                            product.setValuesForKeys($0.value as! [String : AnyObject])
-                //
-                //                            //                    if product.sellerID != uid {
-                //                            products.append(product)
-                //                            //                    }
-                //                        }
-                //                    }
-                //                    products.sort(by: { (p1, p2) -> Bool in
-                //                        return p1.timestamp!.doubleValue > p2.timestamp!.doubleValue
-                //                    })
-                //                    completion(true, products)
-                //                })
             }
             
         }

@@ -37,24 +37,25 @@ class AccountViewController: UIViewController, SetupNavBar {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
         
-        let userID = FIRAuth.auth()?.currentUser?.uid
         
         //        FirebaseManager.observeProductByUser(userID: userID!, viewController: self) { (condition, result) in
         //            if condition {
         //                self.datasource.products = result!
         //            }
         //        }
+
         
-        FirebaseManager.getUser(byID: userID!) { (user) in
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        FirebaseManager.getUser(byID: FIRAuth.auth()!.currentUser!.uid) { (user) in
             self.userProfileImage.sd_setImage(with: URL(string: user.profileImageUrl!))
             self.userName.text = user.name
             self.userCity.text = user.city
             self.userEmail.text = user.email
         }
-    }
-    
-    @IBAction func saveAccountCategories(_ sender: UIButton) {
-        FirebaseManager.updateAccountCategory(accountCategory: accountCategories, viewController: self)
     }
     
     

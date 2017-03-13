@@ -63,7 +63,7 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xe7-fU-KDL" customClass="HADropDown" customModule="Crafty" customModuleProvider="target">
-                                <rect key="frame" x="8" y="25" width="304" height="36"/>
+                                <rect key="frame" x="8" y="24" width="304" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.98039215686274506" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="pjP-ab-NYv"/>
@@ -85,7 +85,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKL-Sd-8Ui">
-                                <rect key="frame" x="146" y="4" width="28" height="15"/>
+                                <rect key="frame" x="146.5" y="4" width="27.5" height="14"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -136,7 +136,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="572.5"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crafty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhd-0R-h2Q">
-                                                <rect key="frame" x="97.5" y="26" width="126.5" height="87"/>
+                                                <rect key="frame" x="97" y="26" width="126.5" height="87"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="87" id="N2U-dv-zQd"/>
                                                 </constraints>
@@ -145,7 +145,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handmade goods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yM8-Lt-NRz">
-                                                <rect key="frame" x="59.5" y="113" width="202.5" height="32.5"/>
+                                                <rect key="frame" x="59" y="113" width="202.5" height="32.5"/>
                                                 <fontDescription key="fontDescription" name="Lato-Thin" family="Lato" pointSize="27"/>
                                                 <color key="textColor" red="0.95294117649999999" green="0.70980392160000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -196,7 +196,7 @@
                                                         <real key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                        <color key="value" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -224,7 +224,7 @@
                                                         <real key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                        <color key="value" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -252,7 +252,7 @@
                                                         <real key="value" value="6"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                        <color key="value" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -280,7 +280,7 @@
                                                     <action selector="LoginRegisterSegmentPressed:" destination="Feg-JH-QP9" eventType="valueChanged" id="43I-Wz-TLc"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VR6-Qf-6QX">
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VR6-Qf-6QX">
                                                 <rect key="frame" x="142" y="268.5" width="37" height="37"/>
                                                 <color key="color" red="0.93333333330000001" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </activityIndicatorView>
@@ -515,7 +515,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIr-7c-mxP">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIr-7c-mxP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-7b-r7m">
@@ -652,12 +652,9 @@
                                             <constraint firstAttribute="height" constant="27" id="wS0-7d-FkJ"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZX0-8H-8gL">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZX0-8H-8gL">
                                         <rect key="frame" x="8" y="189" width="304" height="110"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="110" id="Qn6-nS-e6y"/>
-                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qKM-Zn-ghB">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -666,35 +663,20 @@
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSw-1i-58q">
-                                        <rect key="frame" x="112" y="326" width="96" height="30"/>
-                                        <color key="backgroundColor" red="0.93333333330000001" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="96" id="Ksz-qZ-JuP"/>
-                                        </constraints>
-                                        <state key="normal" title="Save">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="saveAccountCategories:" destination="WlG-Mc-2RF" eventType="touchUpInside" id="1T7-hO-AfX"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96470588239999999" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="hs3-7b-r7m" secondAttribute="trailing" constant="20" id="9WL-xM-QZa"/>
                                     <constraint firstItem="hs3-7b-r7m" firstAttribute="top" secondItem="VIr-7c-mxP" secondAttribute="top" constant="12" id="9vm-RH-2z7"/>
-                                    <constraint firstItem="lSw-1i-58q" firstAttribute="top" secondItem="ZX0-8H-8gL" secondAttribute="bottom" constant="27" id="Dya-VU-58J"/>
                                     <constraint firstItem="zTI-M8-lIL" firstAttribute="leading" secondItem="VIr-7c-mxP" secondAttribute="leading" constant="20" id="FIl-DK-avl"/>
-                                    <constraint firstItem="lSw-1i-58q" firstAttribute="centerX" secondItem="VIr-7c-mxP" secondAttribute="centerX" id="KFD-qz-vHc"/>
                                     <constraint firstItem="zTI-M8-lIL" firstAttribute="top" secondItem="hs3-7b-r7m" secondAttribute="bottom" constant="22" id="O9s-ea-oNg"/>
                                     <constraint firstAttribute="trailing" secondItem="ZX0-8H-8gL" secondAttribute="trailing" constant="8" id="URD-2Q-PQm"/>
                                     <constraint firstItem="zTI-M8-lIL" firstAttribute="centerX" secondItem="VIr-7c-mxP" secondAttribute="centerX" id="UwX-sg-HBp"/>
                                     <constraint firstItem="ZX0-8H-8gL" firstAttribute="top" secondItem="zTI-M8-lIL" secondAttribute="bottom" constant="8" id="W2M-7r-TWx"/>
                                     <constraint firstItem="ZX0-8H-8gL" firstAttribute="leading" secondItem="VIr-7c-mxP" secondAttribute="leading" constant="8" id="W5d-Ks-SeM"/>
-                                    <constraint firstAttribute="bottom" secondItem="lSw-1i-58q" secondAttribute="bottom" constant="145" id="bMZ-O5-vu7"/>
                                     <constraint firstItem="hs3-7b-r7m" firstAttribute="leading" secondItem="VIr-7c-mxP" secondAttribute="leading" constant="20" id="rgj-7t-PQn"/>
                                     <constraint firstAttribute="trailing" secondItem="zTI-M8-lIL" secondAttribute="trailing" constant="20" id="vkX-fw-DDu"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZX0-8H-8gL" secondAttribute="bottom" id="y9h-eA-ebz"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
