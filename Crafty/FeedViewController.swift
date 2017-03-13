@@ -21,20 +21,22 @@ class FeedViewController: UIViewController, SetupNavBar {
         collectionView.delegate = self
         self.setupNavigationBar(title: "Feeds")
         self.navigationController?.navigationBar.isTranslucent = false
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let userID = FIRAuth.auth()?.currentUser?.uid
-        FirebaseManager.observeFeed(userID: userID!, viewController: self) { (condition, result) in
-            if condition {
-                print(result)
-                self.datasource.products = result!
-                self.collectionView.reloadData()
+        if let userID = FIRAuth.auth()?.currentUser?.uid {
+            FirebaseManager.observeFeed(userID: userID, viewController: self) { (condition, result) in
+                if condition {
+                    print(result)
+                    self.datasource.products = result!
+                    self.collectionView.reloadData()
+                }
             }
         }
+        
     }
     
     
