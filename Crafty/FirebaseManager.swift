@@ -47,14 +47,18 @@ class FirebaseManager: NSObject {
                         
                         // Start inserting product's info into Database
                         
+<<<<<<< HEAD
                         guard let category = product.category, let categoryDetail = product.categoryDetail, let title = product.title, let detail = product.detail, let price = product.price, let locationName = product.locationName, let locationAddress = product.locationAddress, let peopleWhoLike = product.peopleWhoLike, let love = 0 as? NSNumber else { return }
+=======
+                        guard let category = product.category, let categoryDetail = product.categoryDetail, let title = product.title, let detail = product.detail, let price = product.price, let locationName = product.locationName, let locationAddress = product.locationAddress, let peopleWhoLike = product.peopleWhoLike, let productID = product.productID, let love = 0 as? NSNumber, let commentID = product.commentID, let commentText = product.commentText, let commentDate = 0 as? NSNumber else { return }
+>>>>>>> 5ad4dd1d8e5406000cfdb66cc0c9f29ee9074381
                         
                         let sellerID = FIRAuth.auth()?.currentUser?.uid
                         let ref = FIRDatabase.database().reference().child("products")
                         let timestamp = NSNumber(value: Int(Date().timeIntervalSince1970))
                         
                         let childRef = ref.childByAutoId()
-                        let values: [String: AnyObject] = ["category": category as AnyObject, "categoryDetail": categoryDetail as AnyObject, "title": title as AnyObject, "detail": detail as AnyObject, "price": price as AnyObject, "images": productImagesURL as AnyObject, "locationName": locationName as AnyObject, "locationAddress": locationAddress as AnyObject, "timestamp": timestamp, "love": love as AnyObject, "sellerID": sellerID as AnyObject, "peopleWhoLike": peopleWhoLike as AnyObject, "productID": childRef.key as AnyObject]
+                        let values: [String: AnyObject] = ["category": category as AnyObject, "categoryDetail": categoryDetail as AnyObject, "title": title as AnyObject, "detail": detail as AnyObject, "price": price as AnyObject, "images": productImagesURL as AnyObject, "locationName": locationName as AnyObject, "locationAddress": locationAddress as AnyObject, "timestamp": timestamp, "love": love as AnyObject, "sellerID": sellerID as AnyObject, "peopleWhoLike": peopleWhoLike as AnyObject, "productID": childRef.key as AnyObject, "commentID": commentID as AnyObject, "commentText": commentText as AnyObject, "commentDate": commentDate as AnyObject]
                         
                         
                         

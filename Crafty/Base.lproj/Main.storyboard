@@ -85,7 +85,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKL-Sd-8Ui">
-                                <rect key="frame" x="146.5" y="4" width="27.5" height="14"/>
+                                <rect key="frame" x="147" y="4" width="27" height="14"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -130,13 +130,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZqG-aY-rj7">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="572.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="572"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="mq1-ao-P7y">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="572.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="572"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crafty" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhd-0R-h2Q">
-                                                <rect key="frame" x="97" y="26" width="126.5" height="87"/>
+                                                <rect key="frame" x="95" y="26" width="130" height="87"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="87" id="N2U-dv-zQd"/>
                                                 </constraints>
@@ -145,13 +145,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Handmade goods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yM8-Lt-NRz">
-                                                <rect key="frame" x="59" y="113" width="202.5" height="32.5"/>
+                                                <rect key="frame" x="52" y="113" width="217" height="32"/>
                                                 <fontDescription key="fontDescription" name="Lato-Thin" family="Lato" pointSize="27"/>
                                                 <color key="textColor" red="0.95294117649999999" green="0.70980392160000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1K-aY-1KZ">
-                                                <rect key="frame" x="44" y="499.5" width="232" height="49"/>
+                                                <rect key="frame" x="44" y="499" width="232" height="49"/>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="0.93000000000000005" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="guF-hA-tSL"/>
@@ -170,7 +170,7 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="w2h-vg-Pac">
-                                                <rect key="frame" x="117" y="197.5" width="85" height="85"/>
+                                                <rect key="frame" x="117" y="197" width="85" height="85"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="w2h-vg-Pac" secondAttribute="height" multiplier="1:1" id="fGn-ce-IVe"/>
                                                     <constraint firstAttribute="height" constant="85" id="u7K-mQ-pXH"/>
@@ -182,7 +182,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="eg: Jimmy Hoang" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5r7-Pe-QHO" customClass="CustomTextField" customModule="Crafty" customModuleProvider="target">
-                                                <rect key="frame" x="44" y="298.5" width="232" height="51"/>
+                                                <rect key="frame" x="44" y="298" width="232" height="51"/>
                                                 <color key="backgroundColor" red="0.070588235289999995" green="0.043137254899999998" blue="0.043137254899999998" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="aQI-fI-dW1"/>
@@ -204,13 +204,13 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7z-5X-KZ0">
-                                                <rect key="frame" x="53" y="306.5" width="27" height="12"/>
+                                                <rect key="frame" x="53" y="306" width="27" height="12"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
                                                 <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="eg: abc@gmail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6xx-Rz-h6t" customClass="CustomTextField" customModule="Crafty" customModuleProvider="target">
-                                                <rect key="frame" x="44" y="357.5" width="232" height="51"/>
+                                                <rect key="frame" x="44" y="357" width="232" height="51"/>
                                                 <color key="backgroundColor" red="0.070588235289999995" green="0.043137254899999998" blue="0.043137254899999998" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="232" id="2tn-Jn-MAj"/>
@@ -232,13 +232,13 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrg-de-91C">
-                                                <rect key="frame" x="52" y="360.5" width="25" height="12"/>
+                                                <rect key="frame" x="52" y="360" width="25" height="12"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
                                                 <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="eg: not 123456" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ys3-dB-hwz" customClass="CustomTextField" customModule="Crafty" customModuleProvider="target">
-                                                <rect key="frame" x="44" y="416.5" width="232" height="51"/>
+                                                <rect key="frame" x="44" y="416" width="232" height="51"/>
                                                 <color key="backgroundColor" red="0.070588235289999995" green="0.043137254899999998" blue="0.043137254899999998" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="232" id="Tfn-x1-fsJ"/>
@@ -260,13 +260,13 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMX-eg-N2n">
-                                                <rect key="frame" x="54" y="420.5" width="43" height="12"/>
+                                                <rect key="frame" x="52" y="420" width="45" height="12"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="10"/>
                                                 <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="YMP-eM-w7I">
-                                                <rect key="frame" x="70" y="153.5" width="180" height="29"/>
+                                                <rect key="frame" x="70" y="153" width="180" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="xpq-LS-FRR"/>
                                                     <constraint firstAttribute="width" constant="180" id="zG1-h1-giD"/>
@@ -281,7 +281,7 @@
                                                 </connections>
                                             </segmentedControl>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VR6-Qf-6QX">
-                                                <rect key="frame" x="142" y="268.5" width="37" height="37"/>
+                                                <rect key="frame" x="142" y="268" width="37" height="37"/>
                                                 <color key="color" red="0.93333333330000001" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                             </activityIndicatorView>
                                         </subviews>
