@@ -246,7 +246,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.94901960780000005" green="0.92156862750000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="6"/>
@@ -521,7 +521,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-7b-r7m">
                                         <rect key="frame" x="20" y="12" width="280" height="120"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qg0-N2-S7j">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qg0-N2-S7j">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qg0-N2-S7j" secondAttribute="height" multiplier="1:1" id="5e1-BY-no1"/>
@@ -664,6 +664,11 @@
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
+                                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="Bam-Fe-onD">
+                                            <rect key="frame" x="0.0" y="0.0" width="304" height="265"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="color" red="0.93333333330000001" green="0.3803921569" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </activityIndicatorView>
                                         <cells/>
                                     </collectionView>
                                 </subviews>
@@ -705,6 +710,7 @@
                     <navigationItem key="navigationItem" title="Crafty" id="pyg-Lj-Qft"/>
                     <connections>
                         <outlet property="categoryCollectionView" destination="ZX0-8H-8gL" id="Bp2-h5-Ys6"/>
+                        <outlet property="indicator" destination="Bam-Fe-onD" id="Rxn-Tx-AQr"/>
                         <outlet property="userCity" destination="Xve-1K-xEj" id="6nC-nb-Ebh"/>
                         <outlet property="userEmail" destination="PDS-pA-Kny" id="c7e-ao-fyM"/>
                         <outlet property="userName" destination="Dki-Dr-aLv" id="vyW-fF-DyE"/>
@@ -759,7 +765,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aXP-Ac-q1e">
                                 <rect key="frame" x="0.0" y="72" width="320" height="80"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="takePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="SVM-sp-BSn">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="takePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="SVM-sp-BSn">
                                         <rect key="frame" x="130" y="10" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="GO9-Yk-xpz"/>
@@ -771,7 +777,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="takePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Hr4-aI-epA">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="takePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Hr4-aI-epA">
                                         <rect key="frame" x="130" y="10" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="qDb-jW-MDg"/>
@@ -783,7 +789,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="takePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="g9m-XC-afi">
+                                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="takePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="g9m-XC-afi">
                                         <rect key="frame" x="130" y="10" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="oOg-sA-khB"/>
@@ -833,7 +839,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose one" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LA-Vl-PIj">
-                                                    <rect key="frame" x="222" y="19.5" width="65" height="14"/>
+                                                    <rect key="frame" x="224" y="19.5" width="63" height="14"/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                     <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="0.4923812072" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -870,7 +876,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Describe your item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyq-g5-YIz">
-                                                    <rect key="frame" x="186" y="19.5" width="101" height="14"/>
+                                                    <rect key="frame" x="187.5" y="19.5" width="99.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                     <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="0.4923812072" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -910,7 +916,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="VND 0.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WFx-qW-JkA">
-                                                    <rect key="frame" x="98" y="19.5" width="214" height="14"/>
+                                                    <rect key="frame" x="98" y="0.0" width="214" height="52"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="52" id="jfo-qG-bpQ"/>
+                                                    </constraints>
                                                     <color key="textColor" red="0.36078431370000003" green="0.29411764709999999" blue="0.31764705879999999" alpha="0.4923812072" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -997,7 +1006,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ps-pS-z6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2222" y="1569"/>
+            <point key="canvasLocation" x="2221.875" y="1568.661971830986"/>
         </scene>
         <!--bach-->
         <scene sceneID="W46-mO-loi">

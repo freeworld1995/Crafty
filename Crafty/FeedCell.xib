@@ -27,14 +27,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="365" height="71"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J3y-fm-Laz">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J3y-fm-Laz">
                         <rect key="frame" x="8" y="8" width="56" height="56"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="J3y-fm-Laz" secondAttribute="height" multiplier="1:1" id="BuJ-bB-RrQ"/>
                             <constraint firstAttribute="height" constant="56" id="P9N-et-SAQ"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pL4-4X-hbI">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pL4-4X-hbI">
                         <rect key="frame" x="301" y="7" width="56" height="56"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="pL4-4X-hbI" secondAttribute="height" multiplier="1:1" id="Fqp-gv-Kw7"/>

@@ -25,11 +25,17 @@ class HomeViewController: UIViewController, IndicatorInfoProvider {
         collectionView.register(HighlightCollectionViewCell.self)
         collectionView.register(SectionLabelCell.self)
         collectionView.register(HomeCategoryCell.self)
-        checkIfUserIsLoggedIn()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(FIRAuth.auth()?.currentUser?.uid)
+        checkIfUserIsLoggedIn()
     }
     
     override func awakeFromNib() {

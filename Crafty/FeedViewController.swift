@@ -30,6 +30,7 @@ class FeedViewController: UIViewController, SetupNavBar {
         let userID = FIRAuth.auth()?.currentUser?.uid
         FirebaseManager.observeFeed(userID: userID!, viewController: self) { (condition, result) in
             if condition {
+                print(result)
                 self.datasource.products = result!
                 self.collectionView.reloadData()
             }

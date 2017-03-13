@@ -47,16 +47,16 @@ class FirebaseManager: NSObject {
                         
                         // Start inserting product's info into Database
                         
-
+                        
                         guard let category = product.category, let categoryDetail = product.categoryDetail, let title = product.title, let detail = product.detail, let price = product.price, let locationName = product.locationName, let locationAddress = product.locationAddress, let peopleWhoLike = product.peopleWhoLike, let love = 0 as? NSNumber else { return }
-
+                        
                         let sellerID = FIRAuth.auth()?.currentUser?.uid
                         let ref = FIRDatabase.database().reference().child("products")
                         let timestamp = NSNumber(value: Int(Date().timeIntervalSince1970))
                         
                         let childRef = ref.childByAutoId()
                         let values: [String: AnyObject] = ["category": category as AnyObject, "categoryDetail": categoryDetail as AnyObject, "title": title as AnyObject, "detail": detail as AnyObject, "price": price as AnyObject, "images": productImagesURL as AnyObject, "locationName": locationName as AnyObject, "locationAddress": locationAddress as AnyObject, "timestamp": timestamp, "love": love as AnyObject, "sellerID": sellerID as AnyObject, "peopleWhoLike": peopleWhoLike as AnyObject, "productID": childRef.key as AnyObject]
-
+                        
                         childRef.updateChildValues(values) { (error, ref) in
                             if error != nil {
                                 print(error!)
@@ -131,7 +131,7 @@ class FirebaseManager: NSObject {
     }
     
     static func observeSortedProduct(type: SortingType, category: String, viewController controller: UIViewController, completion: @escaping (_ result: Bool, _ productList: [Product]?) -> ()) {
-        guard FIRAuth.auth()?.currentUser?.uid != nil else { return }
+        guard let userID = FIRAuth.auth()?.currentUser?.uid else { return }
         
         var products = [Product]()
         
@@ -143,9 +143,9 @@ class FirebaseManager: NSObject {
                     let product = Product()
                     product.setValuesForKeys($0.value as! [String : AnyObject])
                     
-                    //                    if product.sellerID != uid {
-                    products.append(product)
-                    //                    }
+                    if product.sellerID != userID {
+                        products.append(product)
+                    }
                 }
                 
                 if type == .highest {
@@ -187,7 +187,7 @@ class FirebaseManager: NSObject {
         
         var products = [Product]()
         
-        let ref = FIRDatabase.database().reference().child("userProducts").queryEqual(toValue: userID)
+        let ref = FIRDatabase.database().reference().child("userProducts").child(userID)
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
@@ -308,6 +308,12 @@ class FirebaseManager: NSObject {
         }) { (error) in
             print("error checking account cateogry: \(error)")
         }
+    }
+    
+    static func observeHighlightProduct(completion: @escaping (Bool) -> ()) {
+        let userID = FIRAuth.auth()?.currentUser?.uid
+        
+        let ref = FIRDatabase.database().reference().child("products").queryLimited(toFirst: 10)
     }
     
     static func handleLogout() {

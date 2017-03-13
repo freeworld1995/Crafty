@@ -30,7 +30,7 @@ class RegisterViewController: UIViewController {
     
     var city: String?
     
-    let locationMamager = LocationManager()
+    let locationManager = LocationManager()
     var confetti: SAConfettiView!
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
@@ -41,11 +41,9 @@ class RegisterViewController: UIViewController {
         confetti = SAConfettiView(frame: self.view.bounds)
         confetti.isUserInteractionEnabled = false
         confetti.type = .Diamond
-        confetti.intensity = 0.35
+        confetti.intensity = 0.32
         self.view.addSubview(confetti)
-        
-        
-        
+     
         indicator.isHidden = true
         
         scrollView.isScrollEnabled = true
@@ -56,12 +54,7 @@ class RegisterViewController: UIViewController {
         nameTxt.delegate = self
         emailTxt.delegate = self
         passwordTxt.delegate = self
-        
-        locationMamager.getAdress { (result) in
-            if let city = result["City"] as? String {
-                self.city = city
-            }
-        }
+
         
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleSelectProfileImageView)))
         imageView.isUserInteractionEnabled = true
@@ -99,6 +92,13 @@ class RegisterViewController: UIViewController {
         if segmentControl.selectedSegmentIndex == 0 {
             handleLogin()
         } else {
+            
+            locationManager.getAdress { (result) in
+                if let city = result["City"] as? String {
+                    self.city = city
+                }
+            }
+            
             handleRegister()
         }
     }

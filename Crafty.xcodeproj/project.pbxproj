@@ -35,7 +35,6 @@
 		BF6F5DDC1E700D5C005EBAD2 /* HADropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DDB1E700D5C005EBAD2 /* HADropDown.swift */; };
 		BF6F5DDF1E7318F0005EBAD2 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DDD1E7318F0005EBAD2 /* FeedCell.swift */; };
 		BF6F5DE01E7318F0005EBAD2 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6F5DDE1E7318F0005EBAD2 /* FeedCell.xib */; };
-		BF6F5DE31E732172005EBAD2 /* AccountCategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DE21E732172005EBAD2 /* AccountCategoryDataSource.swift */; };
 		BF6F5DE61E7322DF005EBAD2 /* AccountCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DE41E7322DF005EBAD2 /* AccountCategoryCell.swift */; };
 		BF6F5DE71E7322DF005EBAD2 /* AccountCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6F5DE51E7322DF005EBAD2 /* AccountCategoryCell.xib */; };
 		BF6F5DEA1E735632005EBAD2 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F5DE91E735632005EBAD2 /* FeedViewController.swift */; };
@@ -153,7 +152,6 @@
 		BF6F5DDB1E700D5C005EBAD2 /* HADropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HADropDown.swift; sourceTree = "<group>"; };
 		BF6F5DDD1E7318F0005EBAD2 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		BF6F5DDE1E7318F0005EBAD2 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
-		BF6F5DE21E732172005EBAD2 /* AccountCategoryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCategoryDataSource.swift; sourceTree = "<group>"; };
 		BF6F5DE41E7322DF005EBAD2 /* AccountCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCategoryCell.swift; sourceTree = "<group>"; };
 		BF6F5DE51E7322DF005EBAD2 /* AccountCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountCategoryCell.xib; sourceTree = "<group>"; };
 		BF6F5DE91E735632005EBAD2 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -788,7 +786,6 @@
 				BFF2962E1E684CCA00F0287F /* AccountViewController.swift */,
 				BFF296311E684CE200F0287F /* AccountDataSource.swift */,
 				BFF296391E685A4700F0287F /* AccountController+Handler.swift */,
-				BF6F5DE21E732172005EBAD2 /* AccountCategoryDataSource.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -998,7 +995,6 @@
 				BF304B401E576F500069E36D /* DeliveryTableViewCell.swift in Sources */,
 				BF3938EB1E6D14B50075B2A5 /* BaseCellWithShadow.swift in Sources */,
 				BF6F5DEA1E735632005EBAD2 /* FeedViewController.swift in Sources */,
-				BF6F5DE31E732172005EBAD2 /* AccountCategoryDataSource.swift in Sources */,
 				BF86D5B71E4B091C00C4F492 /* CategoryDetailCollectionView.swift in Sources */,
 				BF86D5B41E4B041500C4F492 /* CategoryContainerCell.swift in Sources */,
 				BF304B3C1E575CD00069E36D /* PriceTableViewCell.swift in Sources */,

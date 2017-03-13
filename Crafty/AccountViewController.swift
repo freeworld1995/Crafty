@@ -13,6 +13,7 @@ import SDWebImage
 class AccountViewController: UIViewController, SetupNavBar {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     @IBOutlet weak var userProfileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -25,6 +26,7 @@ class AccountViewController: UIViewController, SetupNavBar {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoryCollectionView.register(ProductCell.self)
         categoryCollectionView.register(AccountCategoryCell.self)
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = datasource
@@ -40,12 +42,16 @@ class AccountViewController: UIViewController, SetupNavBar {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        indicator.isHidden = false
+        indicator.startAnimating()
         
         let userID = FIRAuth.auth()!.currentUser!.uid
         
         FirebaseManager.observeProductByUser(userID: userID, viewController: self) { (condition, result) in
             if condition {
                 self.datasource.products = result!
+                self.categoryCollectionView.reloadData()
+                self.indicator.stopAnimating()
             }
         }
         
