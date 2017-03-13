@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SAConfettiView
 
 class RegisterViewController: UIViewController {
     
@@ -30,11 +31,20 @@ class RegisterViewController: UIViewController {
     var city: String?
     
     let locationMamager = LocationManager()
+    var confetti: SAConfettiView!
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        confetti = SAConfettiView(frame: self.view.bounds)
+        confetti.isUserInteractionEnabled = false
+        confetti.type = .Diamond
+        confetti.intensity = 0.35
+        self.view.addSubview(confetti)
+        
+        
         
         indicator.isHidden = true
         
@@ -58,6 +68,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func textFieldTouched(_ sender: CustomTextField) {
+        confetti.startConfetti()
         UIView.animate(withDuration: 0.7) { [unowned self] in
             self.scrollView.contentOffset = CGPoint(x: 0, y: sender.frame.origin.y - 200)
         }
@@ -84,6 +95,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerPressed(_ sender: UIButton) {
+        
         if segmentControl.selectedSegmentIndex == 0 {
             handleLogin()
         } else {

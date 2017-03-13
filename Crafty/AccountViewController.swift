@@ -20,7 +20,6 @@ class AccountViewController: UIViewController, SetupNavBar {
     @IBOutlet weak var userEmail: UILabel!
     
     let datasource = AccountDataSource()
-    let accountCategoryDatasource = AccountCategoryDataSource()
     
     var accountCategories: [String] = []
     
@@ -28,7 +27,7 @@ class AccountViewController: UIViewController, SetupNavBar {
         super.viewDidLoad()
         categoryCollectionView.register(AccountCategoryCell.self)
         categoryCollectionView.delegate = self
-        categoryCollectionView.dataSource = accountCategoryDatasource
+        categoryCollectionView.dataSource = datasource
         
         userProfileImage.layer.cornerRadius = userProfileImage.frame.width / 2
         userProfileImage.layer.masksToBounds = true
@@ -36,21 +35,21 @@ class AccountViewController: UIViewController, SetupNavBar {
         self.setupNavigationBar(title: "Account")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
-        
-        
-        //        FirebaseManager.observeProductByUser(userID: userID!, viewController: self) { (condition, result) in
-        //            if condition {
-        //                self.datasource.products = result!
-        //            }
-        //        }
 
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        FirebaseManager.getUser(byID: FIRAuth.auth()!.currentUser!.uid) { (user) in
+        let userID = FIRAuth.auth()!.currentUser!.uid
+        
+        FirebaseManager.observeProductByUser(userID: userID, viewController: self) { (condition, result) in
+            if condition {
+                self.datasource.products = result!
+            }
+        }
+        
+        FirebaseManager.getUser(byID: userID) { (user) in
             self.userProfileImage.sd_setImage(with: URL(string: user.profileImageUrl!))
             self.userName.text = user.name
             self.userCity.text = user.city

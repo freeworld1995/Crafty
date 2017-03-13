@@ -9,6 +9,7 @@
 import UIKit
 import DOFavoriteButton
 import Firebase
+
 class ProductViewTableViewCell: UITableViewCell {
     @IBOutlet weak var btnLike: DOFavoriteButton!
     
@@ -24,6 +25,9 @@ class ProductViewTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    
+    var productCategory: String!
+    var sellerID: String!
     
     var productID: String!
     override func awakeFromNib() {
@@ -63,7 +67,6 @@ class ProductViewTableViewCell: UITableViewCell {
                         for (index, person) in peopleWhoLike.enumerated() {
                             
                             if person == userID {
-                                print("du ma m: \(index)")
                                 peopleWhoLike.remove(at: index)
                             }
                             // sender.deselect()
@@ -83,10 +86,22 @@ class ProductViewTableViewCell: UITableViewCell {
                                         let count = hearts.count
                                         
                                         self.heartLabel.text = "\(count) ♥️"
-                                        ref.child("products").child(self.productID).updateChildValues(["love": count])
+                                        let update = [
+                                            "products/\(self.productID!)/love": count,
+                                            "productCategory/\(self.productCategory!)/\(self.productID!)/love": count,
+                                            "userProducts/\(self.sellerID!)/\(self.productID!)/love": count
+                                        ]
+                                        
+                                        ref.updateChildValues(update)
                                     }else{
                                         self.heartLabel.text = "   "
-                                        ref.child("products").child(self.productID).updateChildValues(["love": 0])
+                                        let update = [
+                                            "products/\(self.productID!)/love": 0,
+                                            "productCategory/\(self.productCategory!)/\(self.productID!)/love": 0,
+                                            "userProducts/\(self.sellerID!)/\(self.productID!)/love": 0
+                                        ]
+                                        
+                                        ref.updateChildValues(update)
                                     }
                                     
                                 }
@@ -132,10 +147,16 @@ class ProductViewTableViewCell: UITableViewCell {
                                                 }else{
                                                     self.heartLabel.text = "\(count) 💕"
                                                 }
-                                                let update = ["love":count]
-                                                ref.child("products").child(self.productID).updateChildValues(update)
-                                                //sender.select()
+//                                                let update = ["love":count]
                                                 
+                                                let update = [
+                                                    "products/\(self.productID!)/love": count,
+                                                    "productCategory/\(self.productCategory!)/\(self.productID!)/love": count,
+                                                    "userProducts/\(self.sellerID!)/\(self.productID!)/love": count
+                                                ]
+                                                
+                                                ref.updateChildValues(update)
+                                                //sender.select()
                                             }
                                         }
                                     })
@@ -158,8 +179,13 @@ class ProductViewTableViewCell: UITableViewCell {
                                             }else{
                                                 self.heartLabel.text = "\(count) 💕"
                                             }
-                                            let update = ["love":count]
-                                            ref.child("products").child(self.productID).updateChildValues(update)
+                                            let update = [
+                                                "products/\(self.productID!)/love": count,
+                                                "productCategory/\(self.productCategory!)/\(self.productID!)/love": count,
+                                                "userProducts/\(self.sellerID!)/\(self.productID!)/love": count
+                                            ]
+                                            
+                                            ref.updateChildValues(update)
                                             //sender.select()
                                             
                                         }

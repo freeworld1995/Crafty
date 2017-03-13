@@ -11,7 +11,7 @@ import Firebase
 
 class FeedViewController: UIViewController, SetupNavBar {
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
     let datasource = FeedDataSource()
     
     override func viewDidLoad() {
@@ -22,8 +22,12 @@ class FeedViewController: UIViewController, SetupNavBar {
         self.setupNavigationBar(title: "Feeds")
         self.navigationController?.navigationBar.isTranslucent = false
 
-        let userID = FIRAuth.auth()?.currentUser?.uid
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        let userID = FIRAuth.auth()?.currentUser?.uid
         FirebaseManager.observeFeed(userID: userID!, viewController: self) { (condition, result) in
             if condition {
                 self.datasource.products = result!
@@ -31,7 +35,7 @@ class FeedViewController: UIViewController, SetupNavBar {
             }
         }
     }
-
     
-
+    
+    
 }

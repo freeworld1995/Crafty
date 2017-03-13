@@ -71,8 +71,8 @@ class ProductViewController: UIViewController {
     
     deinit {
         print("productVC deinit")
-
-            NotificationCenter.default.post(name: Notification.Name(rawValue: "productVC"), object: nil, userInfo: ["result": true])
+        
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "productVC"), object: nil, userInfo: ["result": true])
         
     }
     
@@ -105,11 +105,10 @@ extension ProductViewController: UITableViewDataSource{
             cell.descriptionLabel.text = product.detail
             cell.heartLabel.text = "\(self.product.love!) ❤️"
             cell.productID = self.product.productID
-            
+            cell.productCategory = self.product.category
+            cell.sellerID = self.product.sellerID
             product.peopleWhoLike?.forEach {
                 if $0 == FIRAuth.auth()?.currentUser?.uid {
-                    //                    cell.btnHeart.imageColorOff = UIColor.red
-                    //                    cell.btnHeart.imageColorOn = UIColor.gray
                     cell.btnHeart.isSelected = true
                 }
             }
@@ -124,6 +123,7 @@ extension ProductViewController: UITableViewDataSource{
     }
     
 }
+
 extension ProductViewController: UIScrollViewDelegate{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         updateHeaderView()

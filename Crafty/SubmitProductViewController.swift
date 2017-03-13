@@ -9,10 +9,13 @@
 import UIKit
 import Firebase
 import ImagePicker
+import SAConfettiView
 
 class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavigationControllerDelegate, SetupNavBar {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     @IBOutlet weak var productImage1: UIImageView!
     @IBOutlet weak var productImage2: UIImageView!
@@ -23,14 +26,22 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
     @IBOutlet weak var rightImageContraint: NSLayoutConstraint!
     
     var product: Product!
+    var confetti: SAConfettiView!
     
     let dataSource = SubmitProductDataSource()
     let nf = NumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        product = Product()
         
+        confetti = SAConfettiView(frame: self.view.bounds)
+        confetti.isUserInteractionEnabled = false
+        confetti.type = .Diamond
+        confetti.intensity = 0.35
+        self.view.addSubview(confetti)
+        
+        product = Product()
+        indicator.isHidden = true
         self.setupNavigationBar(title: "Sell")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Submit", style: .plain, target: self, action: #selector(handleSubmitProduct))
         
@@ -65,11 +76,18 @@ class SubmitProductViewController: UIViewController, ImagePickerDelegate, UINavi
     }
     
     func handleSubmitProduct() {
+        confetti.startConfetti()
         let cell = tableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! PriceTableViewCell
         product.price = Double(cell.priceTextField.text!) as NSNumber?
         
+        indicator.isHidden = false
+        indicator.startAnimating()
+        
         FirebaseManager.handleSubmitProductInfo(product: product, images: imageCollection, viewController: self) {
             self.resetAfterSubmit()
+            self.indicator.isHidden = true
+            self.indicator.stopAnimating()
+            self.confetti.stopConfetti()
         }
         
     }

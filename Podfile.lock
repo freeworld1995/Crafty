@@ -57,6 +57,7 @@ PODS:
   - RxCocoa (3.2.0):
     - RxSwift (~> 3.1)
   - RxSwift (3.2.0)
+  - SAConfettiView (0.1.8)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -78,6 +79,7 @@ DEPENDENCIES:
   - RAMAnimatedTabBarController (~> 2.0.13)
   - RxCocoa (~> 3.0)
   - RxSwift (~> 3.0)
+  - SAConfettiView
   - SDWebImage (~> 3.8)
   - SwiftyJSON
   - XLPagerTabStrip (~> 7.0)
@@ -112,10 +114,11 @@ SPEC CHECKSUMS:
   RAMAnimatedTabBarController: 2510f3b66954c3f77ea1042a35d34df8f5f3b604
   RxCocoa: ccdf43101a70407097a29082f648ba1676075b30
   RxSwift: 46574f70d416b7923c237195939cc488a7fbf3a0
+  SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XLPagerTabStrip: 9be80a66c6b7d60306b2c0a6004965016d68f813
 
-PODFILE CHECKSUM: 0c16013adb2264acaf6991abb737ce089977556d
+PODFILE CHECKSUM: 2306ebc6502fa6facdabacaa526efe713eac6d93
 
 COCOAPODS: 1.2.0

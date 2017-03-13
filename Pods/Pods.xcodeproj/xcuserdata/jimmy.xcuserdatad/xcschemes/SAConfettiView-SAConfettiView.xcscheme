@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C147FB851C4B97A7B663598589B9ABA5'
-               BlueprintName = 'DOFavoriteButton'
+               BlueprintIdentifier = '0E28EEEBB1FAFBB6E3A46B6FB382E02C'
+               BlueprintName = 'SAConfettiView-SAConfettiView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'DOFavoriteButton.framework'>
+               BuildableName = 'SAConfettiView.bundle'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

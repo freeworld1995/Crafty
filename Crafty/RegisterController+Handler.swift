@@ -31,7 +31,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
     
     func handleRegister() {
         guard let name = nameTxt.text, let email = emailTxt.text, let password = passwordTxt.text, let city = city else { return }
-        
+        indicator.isHidden = false
         indicator.startAnimating()
         
         // Tạo user - cần email, password
