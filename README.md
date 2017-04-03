@@ -4,7 +4,9 @@ An application for people who love DIY their own Handmade's stuffs. A hybrid bet
 
 Link YouTube demo: 
 
+http://www.youtube.com/watch?v=ISxtvV6Cv_8
+
 ![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/ISxtvV6Cv_8/0.jpg)]
-(http://www.youtube.com/watch?v=ISxtvV6Cv_8)
+
 
 ![cover 3x](https://cloud.githubusercontent.com/assets/12258473/24603351/9b8fb516-188a-11e7-9405-592782c8fc2f.png)
