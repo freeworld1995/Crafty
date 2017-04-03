@@ -1,6 +1,6 @@
 # Crafty
 
-An application for people who love DIY their own Handmade's stuffs. A hybrid between social and trading app, where users can login and upload their own crafted item, share it to people who's using the app
+An application for people who love DIY their own Handmade's stuffs. A hybrid between social and trading app, where users can login and upload their own crafted item, share it to people who's using the app. The app use **Firebase** as backend server <3 
 
 Link YouTube demo: 
 
